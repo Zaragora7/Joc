@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://6wfmiditq0vb"]
+
+[ext_resource type="Texture2D" uid="uid://bno2ehwvvok6l" path="res://imatges/key_porta_carrer-removebg-preview.png" id="1_6jswa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5ctoi"]
+radius = 51.859
+height = 332.867
+
+[node name="KeyPortaCarrer" type="Sprite2D"]
+scale = Vector2(0.167287, 0.213481)
+texture = ExtResource("1_6jswa")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -4.68425)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = -0.784884
+shape = SubResource("CapsuleShape2D_5ctoi")
