@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-var gravetat := Vector2.DOWN * 900
+#var gravetat := Vector2.DOWN * 900
 var vel_salt := Vector2.UP * 500
 var direccio := Vector2(0, 0)
 var velocitat_maxima = 200
@@ -10,24 +10,22 @@ var velocitat_maxima = 200
 
 func _physics_process(delta):
 	# Add the gravity.
-	if (velocity.x > 1 or velocity.x < -1):
-		pass
-		#animated_sprite_2D.animation = "Run"
+	if (velocity.x > 1 or velocity.x < -1) and (velocity.y > 1 or velocity.y < -1):
+		animated_sprite_2D.animation = "Running"
 	else:
-		#animated_sprite_2D.animation = "default"
-		pass
-
+		animated_sprite_2D.animation = "default"
+		
 	# Handle jump.
 	direccio = Vector2(0, 0)
 	velocity.x = 0
-	if Input.is_action_just_pressed("Up") and is_on_floor():
-		velocity += vel_salt
-		
+	if Input.is_action_pressed("Up"):
+		#velocity += vel_salt
+		direccio.y -= 1
 	if Input.is_action_pressed("Left"):
 		direccio.x += -1
 	if Input.is_action_pressed("Right"):
 		direccio.x += 1
-	velocity += gravetat * delta
+	#velocity += gravetat * delta
 	velocity += direccio.normalized() * velocitat_maxima
 	move_and_slide()
 	
