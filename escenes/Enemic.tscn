@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://dbns7g6g02chg"]
 
-[ext_resource type="Script" path="res://escenes/Enemic.gd" id="1_ba7wl"]
+[ext_resource type="Script" path="res://Scripts/Enemic.gd" id="1_ba7wl"]
 [ext_resource type="Texture2D" uid="uid://bs842fexygo86" path="res://imatges/Idle (32x32).png" id="1_win4r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i25r1"]
