@@ -10,8 +10,8 @@ var velocitat_maxima = 200
 
 func _physics_process(delta):
 	# Add the gravity.
-	animated_sprite_2D.play("default")
-	if (velocity.x > 1 or velocity.x < -1) and (velocity.y > 1 or velocity.y < -1):
+	#animated_sprite_2D.play("default")
+	if (velocity.x > 1 or velocity.x < -1) or (velocity.y > 1 or velocity.y < -1):
 		animated_sprite_2D.play("Running")
 	else:
 		animated_sprite_2D.animation = "default"
@@ -19,14 +19,16 @@ func _physics_process(delta):
 	# Handle jump.
 	direccio = Vector2(0, 0)
 	velocity.x = 0
+	velocity.y = 0
 	if Input.is_action_pressed("Up"):
 		#velocity += vel_salt
 		direccio.y += -1
 	if Input.is_action_pressed("Left"):
 		direccio.x += -1
-		animated_sprite_2D.animation = "Running"
 	if Input.is_action_pressed("Right"):
 		direccio.x += 1
+	if Input.is_action_pressed("Down"):
+		direccio.y += 1
 	#velocity += gravetat * delta
 	velocity += direccio.normalized() * velocitat_maxima
 	move_and_slide()
