@@ -187,13 +187,12 @@ script = ExtResource("1_vexoh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-56, -92)
+position = Vector2(123, 51)
 scale = Vector2(1.9745, 2)
 sprite_frames = SubResource("SpriteFrames_1d4e5")
-animation = &"Running"
 autoplay = "default"
-frame_progress = 0.698221
+frame_progress = 0.409694
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-55, -90)
+position = Vector2(123, 51)
 shape = SubResource("RectangleShape2D_pl5nd")
