@@ -1,0 +1,8 @@
+[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://d28rl8ft4bsb3"]
+
+[sub_resource type="AudioEffectRecord" id="AudioEffectRecord_g774h"]
+resource_name = "Record"
+
+[resource]
+bus/0/effect/0/effect = SubResource("AudioEffectRecord_g774h")
+bus/0/effect/0/enabled = false
