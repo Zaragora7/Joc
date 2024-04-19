@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://doc4ow574iu6r"]
+[gd_scene load_steps=31 format=3 uid="uid://doc4ow574iu6r"]
 
 [ext_resource type="Script" path="res://Scripts/Jugador.gd" id="1_vexoh"]
 [ext_resource type="Texture2D" uid="uid://bokw3kirthw76" path="res://imatges/Run (32x32).png" id="2_c32n2"]
@@ -181,6 +181,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pl5nd"]
 size = Vector2(51, 59)
 
+[sub_resource type="Gradient" id="Gradient_cgxfn"]
+offsets = PackedFloat32Array(0.038961, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vr8jm"]
+gradient = SubResource("Gradient_cgxfn")
+fill = 1
+fill_from = Vector2(0.5, 0.541284)
+fill_to = Vector2(0.87156, 0)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(183, 160)
 script = ExtResource("1_vexoh")
@@ -191,8 +201,12 @@ position = Vector2(-183, -160)
 scale = Vector2(1.9745, 2)
 sprite_frames = SubResource("SpriteFrames_1d4e5")
 autoplay = "default"
-frame_progress = 0.867336
+frame_progress = 0.805758
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-184, -159)
 shape = SubResource("RectangleShape2D_pl5nd")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-183, -157)
+texture = SubResource("GradientTexture2D_vr8jm")
