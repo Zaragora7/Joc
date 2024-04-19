@@ -182,13 +182,13 @@ animations = [{
 size = Vector2(51, 59)
 
 [sub_resource type="Gradient" id="Gradient_cgxfn"]
-offsets = PackedFloat32Array(0.038961, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0.038961, 0.532468, 0.75974)
+colors = PackedColorArray(1, 1, 1, 1, 0.260056, 0.249748, 0.221992, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_vr8jm"]
 gradient = SubResource("Gradient_cgxfn")
 fill = 1
-fill_from = Vector2(0.5, 0.541284)
+fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.87156, 0)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
@@ -201,7 +201,7 @@ position = Vector2(-183, -160)
 scale = Vector2(1.9745, 2)
 sprite_frames = SubResource("SpriteFrames_1d4e5")
 autoplay = "default"
-frame_progress = 0.805758
+frame_progress = 0.446285
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-184, -159)
