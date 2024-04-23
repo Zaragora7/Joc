@@ -6,6 +6,7 @@ var vel_salt := Vector2.UP * 500
 var direccio := Vector2(0, 0)
 var velocitat_maxima = 200
 @onready var animated_sprite_2D = $AnimatedSprite2D
+@onready var point_light_2d = $PointLight2D
 
 
 func _physics_process(delta):
@@ -32,6 +33,9 @@ func _physics_process(delta):
 	#velocity += gravetat * delta
 	velocity += direccio.normalized() * velocitat_maxima
 	move_and_slide()
+	for i in range(1, 100):
+		point_light_2d.energy -= 0.0001
+		
 	
 	var isLeft = velocity.x < 0
 	animated_sprite_2D.flip_h = isLeft
