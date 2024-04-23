@@ -7,6 +7,7 @@ var direccio := Vector2(0, 0)
 var velocitat_maxima = 200
 @onready var animated_sprite_2D = $AnimatedSprite2D
 @onready var point_light_2d = $PointLight2D
+@onready var animated_sprite_2d_2 = $AnimatedSprite2D2
 
 
 func _physics_process(delta):
@@ -30,6 +31,8 @@ func _physics_process(delta):
 		direccio.x += 1
 	if Input.is_action_pressed("Down"):
 		direccio.y += 1
+	if Input.is_action_just_pressed("atac"):
+		$AnimatedSprite2D2.play("Slash")
 	#velocity += gravetat * delta
 	velocity += direccio.normalized() * velocitat_maxima
 	move_and_slide()
