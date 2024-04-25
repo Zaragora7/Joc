@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://ci7gijaytr73x" path="res://imatges/genericItem_color_155.png" id="1_v8446"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5gxsi"]
-radius = 14.7833
-height = 76.567
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0t5wr"]
+radius = 14.2092
+height = 82.8593
 
 [node name="Node2D" type="Node2D"]
 
@@ -16,4 +16,4 @@ texture = ExtResource("1_v8446")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
 position = Vector2(2, 3)
 rotation = 2.43373
-shape = SubResource("CapsuleShape2D_5gxsi")
+shape = SubResource("CapsuleShape2D_0t5wr")
