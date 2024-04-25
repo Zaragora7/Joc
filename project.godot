@@ -14,6 +14,10 @@ config/name="Joc"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://imatges/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://MúsicaSons/default_bus_layout.tres"
+
 [input]
 
 Right={
