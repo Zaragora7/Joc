@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://doc4ow574iu6r"]
+[gd_scene load_steps=46 format=3 uid="uid://doc4ow574iu6r"]
 
 [ext_resource type="Script" path="res://Scripts/Jugador.gd" id="1_vexoh"]
 [ext_resource type="Texture2D" uid="uid://bokw3kirthw76" path="res://imatges/Run (32x32).png" id="2_c32n2"]
@@ -188,14 +188,14 @@ animations = [{
 size = Vector2(51, 59)
 
 [sub_resource type="Gradient" id="Gradient_cgxfn"]
-offsets = PackedFloat32Array(0.038961, 0.532468, 0.75974)
-colors = PackedColorArray(1, 1, 1, 1, 0.260056, 0.249748, 0.221992, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0.038961, 0.818182, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0.260056, 0.249748, 0.221992, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_vr8jm"]
 gradient = SubResource("Gradient_cgxfn")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.87156, 0)
+fill_to = Vector2(1, 0.0321101)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ygf0"]
 atlas = ExtResource("4_rqap4")
@@ -259,6 +259,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqvfc"]
+size = Vector2(277.778, 165)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(183, 160)
 script = ExtResource("1_vexoh")
@@ -281,8 +284,15 @@ texture = SubResource("GradientTexture2D_vr8jm")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-150, -147)
-scale = Vector2(0.18, 0.2)
+position = Vector2(-179, -145)
+scale = Vector2(0.21, 0.2)
 sprite_frames = SubResource("SpriteFrames_kof8c")
 animation = &"Slash"
 autoplay = "res"
+
+[node name="HitBoxCharacter" type="Area2D" parent="AnimatedSprite2D2"]
+texture_filter = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D2/HitBoxCharacter"]
+position = Vector2(133.333, 0)
+shape = SubResource("RectangleShape2D_dqvfc")
