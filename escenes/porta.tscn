@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsrrassf03mv0"]
+[gd_scene load_steps=11 format=3 uid="uid://bsrrassf03mv0"]
 
 [ext_resource type="Texture2D" uid="uid://r51vwbwpum5i" path="res://imatges/open_door-removebg-preview.png" id="1_w5nmg"]
+[ext_resource type="Script" path="res://Scripts/porta.gd" id="2_oka41"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ft8cg"]
 atlas = ExtResource("1_w5nmg")
@@ -52,8 +53,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3prq8"]
+size = Vector2(60, 112)
+
 [node name="Porta" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1ldpp")
-frame_progress = 0.716304
+frame_progress = 0.9489
+script = ExtResource("2_oka41")
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_3prq8")
