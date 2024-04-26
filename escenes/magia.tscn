@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1yslfxytp8vr"]
+
+[ext_resource type="Texture2D" uid="uid://b14rg33bwugkg" path="res://imatges/magic.webp" id="1_cu4ye"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j2xct"]
+radius = 9.0
+
+[node name="Màgia" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_cu4ye")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_j2xct")
