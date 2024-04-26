@@ -277,7 +277,8 @@ position = Vector2(-183, -160)
 scale = Vector2(1.9745, 2)
 sprite_frames = SubResource("SpriteFrames_1d4e5")
 autoplay = "default"
-frame_progress = 0.446285
+frame = 3
+frame_progress = 0.0555491
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-184, -159)
@@ -288,7 +289,6 @@ position = Vector2(-183, -157)
 texture = SubResource("GradientTexture2D_vr8jm")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-visible = false
 texture_filter = 1
 position = Vector2(-179, -145)
 scale = Vector2(0.21, 0.2)
@@ -303,3 +303,4 @@ libraries = {
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+region_enabled = true
