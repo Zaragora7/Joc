@@ -193,9 +193,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ub5ub")
 }],
-"loop": true,
+"loop": false,
 "name": &"atac2",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ixa8j"]
@@ -214,14 +214,18 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_18hp8")
 animation = &"atac2"
 autoplay = "Idle"
-frame_progress = 0.93106
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.5, 42)
 shape = SubResource("CapsuleShape2D_ixa8j")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="HitBoxAtac" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxAtac"]
 position = Vector2(59, 43.5)
 shape = SubResource("RectangleShape2D_rnqm3")
+disabled = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
