@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://ckrt4pgwi1us5"]
 
-[ext_resource type="Script" path="res://escenes/Cavaller_principal.gd" id="1_5q85a"]
+[ext_resource type="Script" path="res://Scripts/Cavaller_principal.gd" id="1_5q85a"]
 [ext_resource type="Texture2D" uid="uid://i02xmcwqwt75" path="res://imatges/Blue Slash Thin/_Run.png" id="1_540m0"]
 [ext_resource type="Texture2D" uid="uid://cf7n3i3iuvsrv" path="res://imatges/Blue Slash Thin/_Idle.png" id="2_q6yoc"]
 [ext_resource type="Texture2D" uid="uid://b8l43nm73mwno" path="res://imatges/Blue Slash Thin/_Attack2.png" id="4_1ych2"]
@@ -212,10 +212,8 @@ script = ExtResource("1_5q85a")
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_18hp8")
-animation = &"atac2"
+animation = &"Idle"
 autoplay = "Idle"
-frame = 5
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.5, 42)

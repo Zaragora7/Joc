@@ -23,12 +23,8 @@ func _physics_process(delta):
 	if Input.is_action_pressed("Up"):
 		direccio.y += -1
 	if Input.is_action_just_pressed("atac"):
-		animated_sprite_2d.play("atac2")
-		collision_shape_atac.set_deferred("disabled", false)
-		atacar = true
-		
-			
-	velocity += direccio.normalized() * velocitat_maxima
+		_atac()
+	velocity += direccio.normalized() * velocitat_maxima 
 	move_and_slide()
 	if (velocity.x > 1 or velocity.x < -1) or (velocity.y > 1 or velocity.y < -1):
 		$AnimatedSprite2D.play("Running")
@@ -39,12 +35,13 @@ func _physics_process(delta):
 	
 	var isLeft = velocity.x < 0
 	animated_sprite_2d.flip_h = isLeft
-
-
 func _on_animated_sprite_2d_animation_finished():
+	print("Has atacat")
 	animated_sprite_2d.play("Idle")
 	if animated_sprite_2d.animation == "atac2":
 		collision_shape_atac.set_deferred("disabled", true)
 		atacar = false
 func _atac():
-	pass
+	animated_sprite_2d.play("atac2")
+	collision_shape_atac.set_deferred("disabled", false)
+	atacar = true
