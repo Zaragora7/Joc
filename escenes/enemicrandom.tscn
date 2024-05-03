@@ -51,8 +51,4 @@ frame_progress = 0.630024
 wait_time = 0.5
 autostart = true
 
-[node name="Timer2" type="Timer" parent="AnimatedSprite2D"]
-wait_time = 8.0
-
 [connection signal="timeout" from="AnimatedSprite2D/Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="AnimatedSprite2D/Timer2" to="." method="_on_timer_2_timeout"]
