@@ -1,5 +1,5 @@
 extends Area2D
-var speed = 200
+var speed = 100
 var direction
 
 # Called when the node enters the scene tree for the first time.
@@ -13,3 +13,11 @@ func _process(delta):
 	position = position + speed * delta * direction
 
 	
+
+
+func _on_timer_timeout():
+	queue_free()
+
+
+func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	pass
