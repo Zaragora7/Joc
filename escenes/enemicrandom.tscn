@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bqgtw1bfyytqs"]
+[gd_scene load_steps=11 format=3 uid="uid://bqgtw1bfyytqs"]
 
 [ext_resource type="Texture2D" uid="uid://wqly4hud164k" path="res://imatges/Dungeon_Character.png" id="1_grhjc"]
 [ext_resource type="Script" path="res://Scripts/enemicrandomdispara.gd" id="2_hpk2s"]
@@ -39,10 +39,24 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcgvs"]
+size = Vector2(41, 45)
+
+[sub_resource type="Gradient" id="Gradient_g1fqv"]
+offsets = PackedFloat32Array(0.0649351, 0.987013)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3t4j7"]
+gradient = SubResource("Gradient_g1fqv")
+fill = 1
+fill_from = Vector2(0.495413, 0.527523)
+fill_to = Vector2(0.93578, 0.142202)
+
 [node name="EnemicAleatori" type="Area2D"]
 script = ExtResource("2_hpk2s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 scale = Vector2(2.125, 2.5)
 sprite_frames = SubResource("SpriteFrames_122qi")
 frame_progress = 0.630024
@@ -50,5 +64,12 @@ frame_progress = 0.630024
 [node name="Timer" type="Timer" parent="AnimatedSprite2D"]
 wait_time = 0.5
 autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_mcgvs")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = SubResource("GradientTexture2D_3t4j7")
 
 [connection signal="timeout" from="AnimatedSprite2D/Timer" to="." method="_on_timer_timeout"]

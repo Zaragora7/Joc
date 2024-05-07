@@ -6,6 +6,7 @@ var velocitat_maxima = 200
 var atacar:bool = false
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var collision_shape_atac = $HitBoxAtac/CollisionShape2D
+@onready var point_light_2d = $PointLight2D
 
 
 func _physics_process(delta):
@@ -35,6 +36,11 @@ func _physics_process(delta):
 	
 	var isLeft = velocity.x < 0
 	animated_sprite_2d.flip_h = isLeft
+	for i in range(0, 1000):
+		point_light_2d.energy -= 0.000001
+		if point_light_2d.energy == 0 or point_light_2d.energy < 0:
+			break
+		
 func _on_animated_sprite_2d_animation_finished():
 	print("Has atacat")
 	animated_sprite_2d.play("Idle")
@@ -45,3 +51,7 @@ func _atac():
 	animated_sprite_2d.play("atac2")
 	collision_shape_atac.set_deferred("disabled", false)
 	atacar = true
+
+
+func _on_hit_box_atac_area_entered(area):
+	area.mor()
