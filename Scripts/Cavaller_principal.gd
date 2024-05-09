@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+
+var vidas = 3
+var kickback_strength := 200
+var kickback = false
 var vel_salt := Vector2.UP * 500
 var direccio := Vector2(0, 0)
 var velocitat_maxima = 200
@@ -14,6 +18,7 @@ func _physics_process(delta):
 	direccio = Vector2(0,0)
 	velocity.x = 0
 	velocity.y = 0
+
 
 	if Input.is_action_pressed("Right"):
 		direccio.x += 10
@@ -32,7 +37,7 @@ func _physics_process(delta):
 	else:
 		#animated_sprite_2d.play("Idle")
 		pass
-		
+			
 	
 	var isLeft = velocity.x < 0
 	animated_sprite_2d.flip_h = isLeft
@@ -55,3 +60,13 @@ func _atac():
 
 func _on_hit_box_atac_area_entered(area):
 	area.mor()
+
+func mal(pos_enemic: Vector2):
+	var direccio = -global_position.direction_to(pos_enemic)
+	kickback = true
+	var tween = create_tween()
+	tween.tween_property(self, "global_position", global_position + direccio*kickback_strength, 0.5).set_trans(Tween.TRANS_EXPO)
+	tween.finished.connect(kickback_acabat)
+		
+func kickback_acabat():
+	kickback = false
