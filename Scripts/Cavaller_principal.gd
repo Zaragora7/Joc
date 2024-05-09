@@ -34,7 +34,11 @@ func _physics_process(delta):
 	move_and_slide()
 	if (velocity.x > 10 or velocity.x < -10) or (velocity.y > 10 or velocity.y < -10):
 		$AnimatedSprite2D.play("Running")
-	else:
+	if velocity.x == 0 and velocity.y == 0:
+		if Input.is_action_just_pressed("atac"):
+			animated_sprite_2d.play("atac2")
+		else:
+			animated_sprite_2d.play("Idle")
 		#animated_sprite_2d.play("Idle")
 		pass
 			
@@ -53,7 +57,7 @@ func _on_animated_sprite_2d_animation_finished():
 		collision_shape_atac.set_deferred("disabled", true)
 		atacar = false
 func _atac():
-	animated_sprite_2d.play("atac2")
+	#animated_sprite_2d.play("atac2")
 	collision_shape_atac.set_deferred("disabled", false)
 	atacar = true
 

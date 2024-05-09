@@ -19,9 +19,6 @@ func _physics_process(delta):
 func _on_deteccio_body_entered(body):
 		plbody = body
 		playerr = true
-		
-
-
 
 
 func _on_deteccio_body_exited(body):
