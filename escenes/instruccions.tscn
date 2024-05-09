@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4rlp1nshlihr"]
+
+[ext_resource type="Texture2D" uid="uid://rlik3bs3335l" path="res://escenes/mazmorra.jpeg" id="1_u1kw2"]
+[ext_resource type="Script" path="res://escenes/instruccions.gd" id="2_2yn2q"]
+[ext_resource type="FontFile" uid="uid://bc8edytfjkj1x" path="res://escenes/JABROWZKY.ttf" id="3_a5pdq"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Mazmorra" type="Sprite2D" parent="."]
+position = Vector2(545, 362)
+scale = Vector2(0.226, 0.197375)
+texture = ExtResource("1_u1kw2")
+script = ExtResource("2_2yn2q")
+metadata/_edit_lock_ = true
+
+[node name="back" type="Button" parent="Mazmorra"]
+offset_left = -2296.46
+offset_top = -1666.88
+offset_right = -1891.46
+offset_bottom = -1397.88
+theme_override_fonts/font = ExtResource("3_a5pdq")
+theme_override_font_sizes/font_size = 150
+text = "back"
+
+[connection signal="pressed" from="Mazmorra/back" to="Mazmorra" method="_on_back_pressed"]

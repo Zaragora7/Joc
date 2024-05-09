@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwv656sgb6ase"]
+[gd_scene load_steps=4 format=3 uid="uid://cwv656sgb6ase"]
 
 [ext_resource type="Texture2D" uid="uid://rlik3bs3335l" path="res://escenes/mazmorra.jpeg" id="1_8sfcr"]
+[ext_resource type="Script" path="res://escenes/menuinici.gd" id="1_cq87t"]
 [ext_resource type="FontFile" uid="uid://bc8edytfjkj1x" path="res://escenes/JABROWZKY.ttf" id="2_1vgfw"]
 
 [node name="menu prrincipal" type="Node2D"]
+script = ExtResource("1_cq87t")
 
 [node name="Mazmorra" type="Sprite2D" parent="."]
 position = Vector2(545, 362)
@@ -11,19 +13,19 @@ scale = Vector2(0.226, 0.197375)
 texture = ExtResource("1_8sfcr")
 
 [node name="història" type="Button" parent="Mazmorra"]
-offset_left = -535.0
-offset_top = -66.0
-offset_right = 443.0
-offset_bottom = 162.0
+offset_left = -500.0
+offset_top = -157.061
+offset_right = 478.0
+offset_bottom = 70.939
 theme_override_fonts/font = ExtResource("2_1vgfw")
 theme_override_font_sizes/font_size = 150
 text = "Història"
 
 [node name="instruccions" type="Button" parent="Mazmorra"]
-offset_left = -527.0
-offset_top = -497.0
-offset_right = 442.0
-offset_bottom = -269.0
+offset_left = -504.425
+offset_top = -557.315
+offset_right = 464.575
+offset_bottom = -329.315
 theme_override_fonts/font = ExtResource("2_1vgfw")
 theme_override_font_sizes/font_size = 150
 text = "Instruccions"
@@ -35,4 +37,8 @@ offset_right = 460.0
 offset_bottom = -730.0
 theme_override_fonts/font = ExtResource("2_1vgfw")
 theme_override_font_sizes/font_size = 150
-text = "Nivells"
+text = "Jugar!"
+
+[connection signal="pressed" from="Mazmorra/història" to="." method="_on_història_pressed"]
+[connection signal="pressed" from="Mazmorra/instruccions" to="." method="_on_instruccions_pressed"]
+[connection signal="pressed" from="Mazmorra/nivells" to="." method="_on_nivells_pressed"]
