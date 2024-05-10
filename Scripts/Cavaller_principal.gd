@@ -49,10 +49,12 @@ func _atac():
 	animated_sprite_2d.play("atac2")
 	collision_shape_atac.set_deferred("disabled", false)
 	atacar = true
+	
 
 
 func _on_hit_box_atac_area_entered(area):
-	area.mor()
+	if area.has_method("mor"):
+		area.mor()
 
 func guanya_clau():
 	print("Tinc una clau!")
@@ -60,3 +62,7 @@ func guanya_clau():
 
 func mal():
 	print("Au!")
+	
+	
+func mor():
+	get_tree().change_scene_to_packed(load("res://escenes/youdied.tscn"))

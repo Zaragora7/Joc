@@ -53,6 +53,7 @@ fill_from = Vector2(0.495413, 0.527523)
 fill_to = Vector2(0.93578, 0.142202)
 
 [node name="EnemicAleatori" type="Area2D"]
+collision_layer = 16
 script = ExtResource("2_hpk2s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

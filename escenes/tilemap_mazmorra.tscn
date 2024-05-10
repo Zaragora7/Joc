@@ -491,3 +491,15 @@ position = Vector2(145, -241)
 
 [node name="Porta" parent="." instance=ExtResource("6_hj84r")]
 position = Vector2(-38, -526)
+
+[node name="Area2D" parent="." instance=ExtResource("5_v8mhe")]
+position = Vector2(224, -1253.68)
+
+[node name="Porta2" parent="." instance=ExtResource("6_hj84r")]
+position = Vector2(1581, -749)
+
+[node name="Porta3" parent="." instance=ExtResource("6_hj84r")]
+position = Vector2(2898, -648)
+
+[node name="Area2D2" parent="." instance=ExtResource("5_v8mhe")]
+position = Vector2(2183, -615.684)
