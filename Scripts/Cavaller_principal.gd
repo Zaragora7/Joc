@@ -4,6 +4,7 @@ var vel_salt := Vector2.UP * 500
 var direccio := Vector2(0, 0)
 var velocitat_maxima = 200
 var atacar:bool = false
+var tinc_clau := false
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var collision_shape_atac = $HitBoxAtac/CollisionShape2D
 @onready var point_light_2d = $PointLight2D
@@ -53,3 +54,9 @@ func _atac():
 func _on_hit_box_atac_area_entered(area):
 	area.mor()
 
+func guanya_clau():
+	print("Tinc una clau!")
+	tinc_clau = true
+
+func mal():
+	print("Au!")

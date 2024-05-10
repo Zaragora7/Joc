@@ -330,7 +330,7 @@ texture = ExtResource("1_ntd5e")
 9:9/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_rm8nd"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_y20aw")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5c6o8"]

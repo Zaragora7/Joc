@@ -7,6 +7,7 @@
 radius = 9.0
 
 [node name="Màgia" type="Area2D"]
+collision_layer = 8
 script = ExtResource("1_o6nq3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -20,5 +21,5 @@ shape = SubResource("CircleShape2D_j2xct")
 wait_time = 5.201
 autostart = true
 
-[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

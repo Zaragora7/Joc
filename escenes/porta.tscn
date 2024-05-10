@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bsrrassf03mv0"]
+[gd_scene load_steps=12 format=3 uid="uid://bsrrassf03mv0"]
 
 [ext_resource type="Texture2D" uid="uid://r51vwbwpum5i" path="res://imatges/open_door-removebg-preview.png" id="1_w5nmg"]
 [ext_resource type="Script" path="res://Scripts/porta.gd" id="2_oka41"]
@@ -48,7 +48,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wkh5g")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }]
@@ -56,15 +56,25 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3prq8"]
 size = Vector2(60, 112)
 
-[node name="Porta" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_h0mdm"]
+radius = 89.8053
+
+[node name="Porta" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource("2_oka41")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1ldpp")
 frame_progress = 0.9489
-script = ExtResource("2_oka41")
 
-[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_3prq8")
+
+[node name="DetectorPersonatge" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorPersonatge"]
+shape = SubResource("CircleShape2D_h0mdm")
+
+[connection signal="body_entered" from="DetectorPersonatge" to="." method="_on_detector_personatge_body_entered"]

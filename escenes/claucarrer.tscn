@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://escenes/clau.gd" id="2_b2pml"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5ctoi"]
-radius = 51.859
-height = 332.867
+radius = 17.193
+height = 64.6071
 
 [node name="Area2D" type="Area2D"]
 position = Vector2(0, -4.68425)
@@ -20,3 +20,5 @@ shape = SubResource("CapsuleShape2D_5ctoi")
 [node name="KeyPortaCarrer" type="Sprite2D" parent="."]
 scale = Vector2(0.167287, 0.213481)
 texture = ExtResource("1_6jswa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

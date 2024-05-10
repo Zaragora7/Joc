@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://ckrt4pgwi1us5"]
+[gd_scene load_steps=35 format=3 uid="uid://ckrt4pgwi1us5"]
 
 [ext_resource type="Script" path="res://Scripts/Cavaller_principal.gd" id="1_5q85a"]
 [ext_resource type="Texture2D" uid="uid://i02xmcwqwt75" path="res://imatges/Blue Slash Thin/_Run.png" id="1_540m0"]
@@ -214,11 +214,8 @@ gradient = SubResource("Gradient_v2naf")
 fill = 1
 fill_from = Vector2(0.477064, 0.5)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rm707"]
-radius = 17.0
-height = 72.0
-
 [node name="CharacterBody2D" type="CharacterBody2D"]
+collision_mask = 7
 script = ExtResource("1_5q85a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -233,6 +230,7 @@ position = Vector2(-2.5, 42)
 shape = SubResource("CapsuleShape2D_ixa8j")
 
 [node name="HitBoxAtac" type="Area2D" parent="."]
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxAtac"]
 position = Vector2(59, 43.5)
@@ -247,12 +245,6 @@ zoom = Vector2(0.5, 0.5)
 position = Vector2(-6.50001, 38.5)
 scale = Vector2(5.42188, 4.10938)
 texture = SubResource("GradientTexture2D_kbxj8")
-
-[node name="HitboxPersonatge" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxPersonatge"]
-position = Vector2(-8, 46)
-shape = SubResource("CapsuleShape2D_rm707")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="HitBoxAtac" to="." method="_on_hit_box_atac_area_entered"]

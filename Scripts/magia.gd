@@ -19,7 +19,12 @@ func _on_timer_timeout():
 	queue_free()
 
 
-func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	pass
+
 func mor():
-	pass
+	queue_free()
+
+
+func _on_body_entered(body:PhysicsBody2D):
+	if body.has_method("mal"):
+		body.mal()
+	mor()
