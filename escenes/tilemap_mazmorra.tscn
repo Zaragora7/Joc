@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dafh6pi731uou"]
+[gd_scene load_steps=12 format=3 uid="uid://dafh6pi731uou"]
 
 [ext_resource type="Texture2D" uid="uid://cl6iejjimifoy" path="res://imatges/negre.jpg" id="1_065x0"]
 [ext_resource type="Texture2D" uid="uid://d08yr8m83h2ao" path="res://imatges/Dungeon_Tileset.png" id="1_ntd5e"]
 [ext_resource type="PackedScene" uid="uid://ckrt4pgwi1us5" path="res://escenes/Cavaller_principal.tscn" id="2_4ijm3"]
 [ext_resource type="PackedScene" uid="uid://bqgtw1bfyytqs" path="res://escenes/enemicrandom.tscn" id="3_0s5jp"]
+[ext_resource type="PackedScene" uid="uid://l6bf0e6ao0f4" path="res://escenes/claucarrer.tscn" id="5_v8mhe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y20aw"]
 texture = ExtResource("1_ntd5e")
@@ -483,3 +484,6 @@ visible = false
 position = Vector2(-145, -1452)
 scale = Vector2(3.14062, 3.32813)
 texture = SubResource("GradientTexture2D_ps0q6")
+
+[node name="KeyPortaCarrer" parent="." instance=ExtResource("5_v8mhe")]
+position = Vector2(145, -241)
