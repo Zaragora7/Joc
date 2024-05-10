@@ -225,7 +225,7 @@ script = ExtResource("1_5q85a")
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_18hp8")
-animation = &"Idle"
+animation = &"atac2"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -244,8 +244,8 @@ position = Vector2(-5, 36)
 zoom = Vector2(0.5, 0.5)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-6.50001, 43)
-scale = Vector2(5.42188, 3.96875)
+position = Vector2(-6.50001, 38.5)
+scale = Vector2(5.42188, 4.10938)
 texture = SubResource("GradientTexture2D_kbxj8")
 
 [node name="HitboxPersonatge" type="Area2D" parent="."]

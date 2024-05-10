@@ -9,9 +9,6 @@ script/source = "extends Node2D
 func _ready():
 	$Sprite2D/AnimationPlayer.play()
 
-
-func _on_area_lluminosa_body_entered(body):
-	pass
 "
 
 [sub_resource type="Animation" id="Animation_u4csd"]

@@ -36,10 +36,7 @@ func _physics_process(delta):
 	
 	var isLeft = velocity.x < 0
 	animated_sprite_2d.flip_h = isLeft
-	for i in range(0, 1000):
-		point_light_2d.energy -= 0.000001
-		if point_light_2d.energy == 0 or point_light_2d.energy < 0:
-			break
+	
 		
 func _on_animated_sprite_2d_animation_finished():
 	print("Has atacat")
