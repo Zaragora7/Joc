@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cxj0ba5wbpckf"]
+[gd_scene load_steps=14 format=3 uid="uid://dmvt4kq4f3dy6"]
 
 [ext_resource type="Texture2D" uid="uid://bkv37awgsqwcw" path="res://imatges/fire_01.png" id="2_gonvp"]
 [ext_resource type="Texture2D" uid="uid://dwspbaxgr3fme" path="res://imatges/burning_loop_1.png" id="2_wsspp"]
@@ -8,7 +8,26 @@ script/source = "extends Node2D
 
 func _ready():
 	$Sprite2D/AnimationPlayer.play()
+
+
+func _on_area_lluminosa_body_entered(body):
+	pass
 "
+
+[sub_resource type="Animation" id="Animation_u4csd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_bxjiw"]
 resource_name = "foc "
@@ -24,21 +43,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_u4csd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2i(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e5kpe"]
@@ -77,6 +81,8 @@ scale_min = 0.5
 scale_curve = SubResource("CurveTexture_5305w")
 color_ramp = SubResource("GradientTexture1D_8cy7w")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81q1k"]
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = SubResource("GDScript_alfnj")
 
@@ -97,6 +103,17 @@ shape = SubResource("RectangleShape2D_s5bmb")
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Node2D"]
+texture_filter = 1
 amount = 2
+amount_ratio = 0.8018
 process_material = SubResource("ParticleProcessMaterial_vclaj")
 texture = ExtResource("2_gonvp")
+lifetime = 1.03
+
+[node name="Area_lluminosa" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_lluminosa"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_81q1k")
+
+[connection signal="body_entered" from="Area_lluminosa" to="." method="_on_area_lluminosa_body_entered"]

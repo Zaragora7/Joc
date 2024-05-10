@@ -55,3 +55,4 @@ func _atac():
 
 func _on_hit_box_atac_area_entered(area):
 	area.mor()
+
