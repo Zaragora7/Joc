@@ -42,7 +42,7 @@ func _physics_process(delta):
 func _on_animated_sprite_2d_animation_finished():
 	print("Has atacat")
 	animated_sprite_2d.play("Idle")
-	if animated_sprite_2d.animation == "atac2":
+	if animated_sprite_2d.animation == "Idle":
 		collision_shape_atac.set_deferred("disabled", true)
 		atacar = false
 func _atac():
