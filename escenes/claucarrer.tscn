@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://l6bf0e6ao0f4"]
 
 [ext_resource type="Texture2D" uid="uid://bno2ehwvvok6l" path="res://imatges/key_porta_carrer-removebg-preview.png" id="1_6jswa"]
-[ext_resource type="Script" path="res://escenes/clau.gd" id="2_b2pml"]
+[ext_resource type="Script" path="res://Scripts/clau.gd" id="2_b2pml"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5ctoi"]
 radius = 17.193
