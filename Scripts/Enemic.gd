@@ -3,7 +3,7 @@ var velocitat := 20
 var pl = null
 var detecta := false
 var vidas = 3
-const SPEED = 100
+const SPEED = 50
 var playerr = false
 var plbody = null
 var vector_knockback = Vector2()
@@ -39,5 +39,5 @@ func mor():
 	print("muerto")
 	queue_free()
 
-func _on_knockback_body_entered(body):
-	pass # Replace with function body.
+func _on_hitboxenemic_body_entered(body):
+	pass

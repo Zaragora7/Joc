@@ -31,22 +31,47 @@ func _physics_process(delta):
 	velocity += direccio.normalized() * velocitat_maxima 
 	move_and_slide()
 	
-	if velocity.length_squared() == 0 and not atacar:
-	#if velocity.x == 0 and velocity.y == 0:
+	
+	
+	#if velocity.length_squared() == 0 and not atacar:
+	if velocity != Vector2(0,0):
+		$Run.stop()
+	else:
+		$Run.play()
+	
+	
+	if velocity.x == 0 and velocity.y == 0 and not atacar:
+	
 		$AnimatedSprite2D.play("Idle")
-	elif velocity.x < 0:
-		$AnimatedSprite2D.flip_h = true
+	
+	elif velocity.x != 0 or velocity.y != 0:
+
 		$AnimatedSprite2D.play("Running")
+	if velocity.x < 0:
+		$AnimatedSprite2D.flip_h = true
 	elif velocity.x > 0:
 		$AnimatedSprite2D.flip_h = false
-		$AnimatedSprite2D.play("Running")
-	elif velocity.y < 0:
-		$AnimatedSprite2D.play("Running")
-	elif velocity.y > 0:
-		$AnimatedSprite2D.play("Running")
+		
+	#if velocity.length_squared() == 0 and not atacar:
+		#$AnimatedSprite2D.play("Idle")
+	#elif velocity.x < 0:
+		#$AnimatedSprite2D.flip_h = true
+		#$AnimatedSprite2D.play("Running")
+		#$Run.play()
+	#elif velocity.x > 0:
+		#$AnimatedSprite2D.flip_h = false
+		#$AnimatedSprite2D.play("Running")
+	#elif velocity.y < 0:
+		#$AnimatedSprite2D.play("Running")
+		#$Run.play()
+	#elif velocity.y > 0:
+		#$AnimatedSprite2D.play("Running")
+		#$Run.play()
+		
 	#else:
 	#	$AnimatedSprite2D.play("Idle")
 func _atac():
+	$Espasa.play()
 	$AnimatedSprite2D.play("atac2")
 	collision_shape_atac.set_deferred("disabled", false)
 	atacar = true
@@ -56,6 +81,7 @@ func _atac():
 		$HitBoxAtac.position.x = 59
 	await $AnimatedSprite2D.animation_finished
 	atacar = false
+	
 
 		
 		
@@ -82,11 +108,12 @@ func _atac_acabat():
 
 
 func _on_hit_box_atac_area_entered(area):
-	if area.has_method("mor"):
-		area.mor()
-	#if area.is_in_group("enemics"):
-		#print(area.name)
-		#area.queue_free()
+	#if area.has_method("mor"):
+		#area.mor()
+	if area.is_in_group("enemics"):
+		print(area.name)
+		area.queue_free()
+		
 
 func guanya_clau():
 	print("Tinc una clau!")

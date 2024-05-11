@@ -3,6 +3,12 @@
 [ext_resource type="Script" path="res://Scripts/Enemic.gd" id="1_ba7wl"]
 [ext_resource type="Texture2D" uid="uid://bs842fexygo86" path="res://imatges/Idle (32x32).png" id="1_win4r"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irm1g"]
+size = Vector2(23, 25)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7vca5"]
+radius = 340.072
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_i25r1"]
 atlas = ExtResource("1_win4r")
 region = Rect2(0, 0, 32, 32)
@@ -89,17 +95,24 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kbdy"]
-size = Vector2(17, 17)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_7vca5"]
-radius = 340.072
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_irm1g"]
-size = Vector2(23, 25)
+size = Vector2(20, 23)
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["enemics"]]
-collision_layer = 16
+collision_layer = 48
 script = ExtResource("1_ba7wl")
+
+[node name="Hitboxenemic" type="Area2D" parent="." groups=["enemics"]]
+light_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitboxenemic"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_irm1g")
+
+[node name="deteccio" type="Area2D" parent="."]
+light_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deteccio"]
+shape = SubResource("CircleShape2D_7vca5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -107,19 +120,9 @@ sprite_frames = SubResource("SpriteFrames_ktoh5")
 frame_progress = 0.111448
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 4)
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_0kbdy")
 
-[node name="deteccio" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="deteccio"]
-shape = SubResource("CircleShape2D_7vca5")
-
-[node name="Hitboxenemic" type="Area2D" parent="." groups=["enemics"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitboxenemic"]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_irm1g")
-
+[connection signal="body_entered" from="Hitboxenemic" to="." method="_on_hitboxenemic_body_entered"]
 [connection signal="body_entered" from="deteccio" to="." method="_on_deteccio_body_entered"]
 [connection signal="body_exited" from="deteccio" to="." method="_on_deteccio_body_exited"]
