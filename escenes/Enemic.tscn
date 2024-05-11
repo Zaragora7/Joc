@@ -120,8 +120,8 @@ shape = SubResource("RectangleShape2D_ch8nx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="deteccio"]
 shape = SubResource("CircleShape2D_7vca5")
 
-[connection signal="body_entered" from="Knockback" to="." method="_on_knockback_body_entered"]
 [connection signal="body_entered" from="Knockback" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Knockback" to="." method="_on_knockback_body_entered"]
 [connection signal="body_exited" from="Knockback" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="deteccio" to="." method="_on_deteccio_body_entered"]
 [connection signal="body_exited" from="deteccio" to="." method="_on_deteccio_body_exited"]

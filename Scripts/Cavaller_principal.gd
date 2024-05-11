@@ -29,15 +29,38 @@ func _physics_process(delta):
 		_atac()
 	velocity += direccio.normalized() * velocitat_maxima 
 	move_and_slide()
-	if (velocity.x > 10 or velocity.x < -10) or (velocity.y > 10 or velocity.y < -10):
-		$AnimatedSprite2D.play("Running")
-	else:
-		#animated_sprite_2d.play("Idle")
-		pass
-		
 	
-	var isLeft = velocity.x < 0
-	animated_sprite_2d.flip_h = isLeft
+	if velocity.x == 0 and velocity.y == 0 and await _atac():
+		$AnimatedSprite2D.play("Idle")
+	elif velocity.x < 0:
+		$AnimatedSprite2D.flip_h = true
+		$AnimatedSprite2D.play("Running")
+	elif velocity.x > 0:
+		$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.play("Running")
+	elif velocity.y < 0:
+		$AnimatedSprite2D.play("Running")
+	elif velocity.y > 0:
+		$AnimatedSprite2D.play("Running")
+	#else:
+	#	$AnimatedSprite2D.play("Idle")
+func _atac():
+	$AnimatedSprite2D.play("atac2")
+	collision_shape_atac.set_deferred("disabled", false)
+	atacar = true
+	await $AnimatedSprite2D.animation_finished
+	atacar = false
+
+		
+		
+		
+	#if (velocity.x > 10 or velocity.x < -10) or (velocity.y > 10 or velocity.y < -10):
+		#$AnimatedSprite2D.play("Running")
+	#else:
+		#animated_sprite_2d.play("Idle")
+		#pass
+	#var isLeft = velocity.x < 0
+	#animated_sprite_2d.flip_h = isLeft
 	
 		
 func _on_animated_sprite_2d_animation_finished():
@@ -46,11 +69,10 @@ func _on_animated_sprite_2d_animation_finished():
 	if animated_sprite_2d.animation == "Idle":
 		collision_shape_atac.set_deferred("disabled", true)
 		atacar = false
-func _atac():
-	animated_sprite_2d.play("atac2")
-	collision_shape_atac.set_deferred("disabled", false)
-	atacar = true
-	
+
+
+func _atac_acabat():
+	atacar = false
 
 
 func _on_hit_box_atac_area_entered(area):
