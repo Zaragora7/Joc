@@ -29,6 +29,9 @@ func _on_deteccio_body_exited(body):
 	detecta = false
 	pl = null
 
+func mor():
+	print("muerto")
+	queue_free()
 
 func _on_knockback_body_entered(body):
 	pass # Replace with function body.

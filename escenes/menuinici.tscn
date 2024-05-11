@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cwv656sgb6ase"]
 
 [ext_resource type="Texture2D" uid="uid://rlik3bs3335l" path="res://escenes/mazmorra.jpeg" id="1_8sfcr"]
-[ext_resource type="Script" path="res://escenes/menuinici.gd" id="1_cq87t"]
+[ext_resource type="Script" path="res://Scripts/menuinici.gd" id="1_cq87t"]
 [ext_resource type="FontFile" uid="uid://bc8edytfjkj1x" path="res://escenes/JABROWZKY.ttf" id="2_1vgfw"]
 
 [node name="menu prrincipal" type="Node2D"]

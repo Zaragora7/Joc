@@ -26,6 +26,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("Up") and atacar == false:
 		direccio.y += -10
 	if Input.is_action_just_pressed("atac"):
+		direccio = Vector2(0,0)
 		_atac()
 	velocity += direccio.normalized() * velocitat_maxima 
 	move_and_slide()
