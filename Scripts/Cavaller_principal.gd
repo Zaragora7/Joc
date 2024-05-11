@@ -49,6 +49,10 @@ func _atac():
 	$AnimatedSprite2D.play("atac2")
 	collision_shape_atac.set_deferred("disabled", false)
 	atacar = true
+	if $AnimatedSprite2D.flip_h:
+		$HitBoxAtac.position.x = -59
+	else:
+		$HitBoxAtac.position.x = 59
 	await $AnimatedSprite2D.animation_finished
 	atacar = false
 

@@ -233,7 +233,7 @@ shape = SubResource("CapsuleShape2D_ixa8j")
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxAtac"]
-position = Vector2(59, 43.5)
+position = Vector2(0, 43.5)
 shape = SubResource("RectangleShape2D_rnqm3")
 disabled = true
 
