@@ -30,7 +30,8 @@ func _physics_process(delta):
 	velocity += direccio.normalized() * velocitat_maxima 
 	move_and_slide()
 	
-	if velocity.x == 0 and velocity.y == 0 and await _atac():
+	if velocity.length_squared() == 0 and not atacar:
+	#if velocity.x == 0 and velocity.y == 0:
 		$AnimatedSprite2D.play("Idle")
 	elif velocity.x < 0:
 		$AnimatedSprite2D.flip_h = true
