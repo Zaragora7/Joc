@@ -5,6 +5,7 @@ var direccio := Vector2(0, 0)
 var velocitat_maxima = 200
 var atacar:bool = false
 var tinc_clau := false
+var vides = 3
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var collision_shape_atac = $HitBoxAtac/CollisionShape2D
 @onready var point_light_2d = $PointLight2D
@@ -16,13 +17,13 @@ func _physics_process(delta):
 	velocity.x = 0
 	velocity.y = 0
 
-	if Input.is_action_pressed("Right"):
+	if Input.is_action_pressed("Right") and atacar == false:
 		direccio.x += 10
-	if Input.is_action_pressed("Left"):
+	if Input.is_action_pressed("Left") and atacar == false:
 		direccio.x += -10
-	if Input.is_action_pressed("Down"):
+	if Input.is_action_pressed("Down") and atacar == false:
 		direccio.y += 10
-	if Input.is_action_pressed("Up"):
+	if Input.is_action_pressed("Up") and atacar == false:
 		direccio.y += -10
 	if Input.is_action_just_pressed("atac"):
 		_atac()
@@ -61,7 +62,10 @@ func guanya_clau():
 	tinc_clau = true
 
 func mal():
+	vides -= 1
 	print("Au!")
+	if vides == 0:
+		self.mor()
 	
 	
 func mor():

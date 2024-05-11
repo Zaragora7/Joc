@@ -54,7 +54,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3prq8"]
-size = Vector2(60, 112)
+size = Vector2(129, 112)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h0mdm"]
 radius = 89.8053
@@ -68,7 +68,7 @@ sprite_frames = SubResource("SpriteFrames_1ldpp")
 frame_progress = 0.9489
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
+position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_3prq8")
 
 [node name="DetectorPersonatge" type="Area2D" parent="."]
