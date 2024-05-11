@@ -9,11 +9,16 @@ var plbody = null
 var vector_knockback = Vector2()
 var força = 100
 var direccio_enemic = Vector2()
+var mortenemic = false
 
 
 func _physics_process(delta):
 	if detecta:
 		position += (pl.position -position) / SPEED
+	if mortenemic:
+		queue_free()
+		
+		
 
 
 
@@ -21,8 +26,9 @@ func _physics_process(delta):
 
 
 func _on_deteccio_body_entered(body):
-	detecta = true
-	pl = body
+	if body.is_in_group("player"):
+		detecta = true
+		pl = body
 
 
 func _on_deteccio_body_exited(body):

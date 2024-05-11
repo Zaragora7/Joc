@@ -214,7 +214,7 @@ gradient = SubResource("Gradient_v2naf")
 fill = 1
 fill_from = Vector2(0.477064, 0.5)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 collision_mask = 23
 script = ExtResource("1_5q85a")
 
@@ -239,6 +239,8 @@ disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-5, 36)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(-6.50001, 38.5)

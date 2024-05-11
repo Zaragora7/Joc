@@ -91,13 +91,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kbdy"]
 size = Vector2(17, 17)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ch8nx"]
-size = Vector2(19, 22)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_7vca5"]
 radius = 340.072
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_irm1g"]
+size = Vector2(23, 25)
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["enemics"]]
 collision_layer = 16
 script = ExtResource("1_ba7wl")
 
@@ -110,19 +110,16 @@ frame_progress = 0.111448
 position = Vector2(1, 4)
 shape = SubResource("RectangleShape2D_0kbdy")
 
-[node name="Knockback" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Knockback"]
-position = Vector2(0.5, 4)
-shape = SubResource("RectangleShape2D_ch8nx")
-
 [node name="deteccio" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="deteccio"]
 shape = SubResource("CircleShape2D_7vca5")
 
-[connection signal="body_entered" from="Knockback" to="." method="_on_knockback_body_entered"]
-[connection signal="body_entered" from="Knockback" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Knockback" to="." method="_on_area_2d_body_exited"]
+[node name="Hitboxenemic" type="Area2D" parent="." groups=["enemics"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitboxenemic"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_irm1g")
+
 [connection signal="body_entered" from="deteccio" to="." method="_on_deteccio_body_entered"]
 [connection signal="body_exited" from="deteccio" to="." method="_on_deteccio_body_exited"]

@@ -52,7 +52,7 @@ fill = 1
 fill_from = Vector2(0.495413, 0.527523)
 fill_to = Vector2(0.93578, 0.142202)
 
-[node name="EnemicAleatori" type="Area2D"]
+[node name="EnemicAleatori" type="Area2D" groups=["enemics"]]
 collision_layer = 16
 script = ExtResource("2_hpk2s")
 

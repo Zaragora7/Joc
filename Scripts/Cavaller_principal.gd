@@ -84,6 +84,9 @@ func _atac_acabat():
 func _on_hit_box_atac_area_entered(area):
 	if area.has_method("mor"):
 		area.mor()
+	#if area.is_in_group("enemics"):
+		#print(area.name)
+		#area.queue_free()
 
 func guanya_clau():
 	print("Tinc una clau!")
