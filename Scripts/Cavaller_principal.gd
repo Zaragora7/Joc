@@ -120,10 +120,10 @@ func guanya_clau():
 	tinc_clau = true
 
 func mal():
-	#vides -= 1
+	vides -= 1
 	print("Au!")
-	#if vides == 0:
-		#self.mor()
+	if vides == 0:
+		self.mor()
 	
 	
 func mor():
