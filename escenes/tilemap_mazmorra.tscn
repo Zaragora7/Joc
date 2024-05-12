@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dafh6pi731uou"]
+[gd_scene load_steps=15 format=3 uid="uid://dafh6pi731uou"]
 
 [ext_resource type="Texture2D" uid="uid://cl6iejjimifoy" path="res://imatges/negre.jpg" id="1_065x0"]
 [ext_resource type="Texture2D" uid="uid://d08yr8m83h2ao" path="res://imatges/Dungeon_Tileset.png" id="1_ntd5e"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://l6bf0e6ao0f4" path="res://escenes/claucarrer.tscn" id="5_v8mhe"]
 [ext_resource type="PackedScene" uid="uid://bsrrassf03mv0" path="res://escenes/porta.tscn" id="6_hj84r"]
 [ext_resource type="PackedScene" uid="uid://daksydx7xcxgw" path="res://escenes/Enemic.tscn" id="7_futi6"]
+[ext_resource type="PackedScene" uid="uid://d3ovvug6est5e" path="res://contador_claus.tscn" id="8_tkwcm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y20aw"]
 texture = ExtResource("1_ntd5e")
@@ -473,9 +474,6 @@ position = Vector2(-291, 1363)
 scale = Vector2(16.3919, 14.1065)
 texture = ExtResource("1_065x0")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_4ijm3")]
-position = Vector2(-19, 192)
-
 [node name="EnemicAleatori" parent="." instance=ExtResource("3_0s5jp")]
 position = Vector2(-54, -75)
 
@@ -498,6 +496,9 @@ position = Vector2(-38, -526)
 [node name="Area2D" parent="." instance=ExtResource("5_v8mhe")]
 position = Vector2(224, -1253.68)
 
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_4ijm3")]
+position = Vector2(-19, 192)
+
 [node name="Porta2" parent="." instance=ExtResource("6_hj84r")]
 position = Vector2(1581, -749)
 
@@ -509,3 +510,5 @@ position = Vector2(2183, -615.684)
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("7_futi6")]
 position = Vector2(639, -1171)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("8_tkwcm")]
