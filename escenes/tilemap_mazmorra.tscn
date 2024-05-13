@@ -488,13 +488,17 @@ scale = Vector2(3.14062, 3.32813)
 texture = SubResource("GradientTexture2D_ps0q6")
 
 [node name="KeyPortaCarrer" parent="." instance=ExtResource("5_v8mhe")]
+visible = false
 position = Vector2(145, -241)
 
 [node name="Porta" parent="." instance=ExtResource("6_hj84r")]
 position = Vector2(-38, -526)
 
 [node name="Area2D" parent="." instance=ExtResource("5_v8mhe")]
-position = Vector2(224, -1253.68)
+position = Vector2(204, -1254)
+
+[node name="Area2D4" parent="." instance=ExtResource("5_v8mhe")]
+position = Vector2(96, -322)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_4ijm3")]
 position = Vector2(-19, 192)
@@ -506,7 +510,10 @@ position = Vector2(1581, -749)
 position = Vector2(2898, -648)
 
 [node name="Area2D2" parent="." instance=ExtResource("5_v8mhe")]
-position = Vector2(2170, -657)
+position = Vector2(2152, -639)
+
+[node name="Area2D3" parent="." instance=ExtResource("5_v8mhe")]
+position = Vector2(2798, -1397)
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("7_futi6")]
 position = Vector2(639, -1171)
@@ -514,4 +521,4 @@ position = Vector2(639, -1171)
 [node name="CanvasLayer" parent="." instance=ExtResource("8_tkwcm")]
 
 [node name="Porta4" parent="." instance=ExtResource("6_hj84r")]
-position = Vector2(2130, -1827)
+position = Vector2(2122, -1821)
