@@ -13,7 +13,7 @@ func dispara():
 	nova_magia.global_position = self.global_position
 	nova_magia.rotation = global_rotation
 	
-#func mor():
-	#queue_free()
+func mor():
+	queue_free()
 	
 

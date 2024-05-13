@@ -108,11 +108,11 @@ func _atac_acabat():
 
 
 func _on_hit_box_atac_area_entered(area):
-	#if area.has_method("mor"):
-		#area.mor()
-	if area.is_in_group("enemics"):
-		print(area.name)
-		area.queue_free()
+	if area.has_method("mort"):
+		area.mor()
+	#if area.is_in_group("enemics"):
+		#print(area.name)
+		#area.queue_free()
 		
 
 func guanya_clau():
@@ -128,3 +128,8 @@ func mal():
 	
 func mor():
 	get_tree().change_scene_to_packed(load("res://escenes/youdied.tscn"))
+
+
+func _on_hit_box_atac_body_entered(body):
+	if body.has_method("mort"):
+		body.mort()
