@@ -37,8 +37,7 @@ func _physics_process(delta):
 	if velocity != Vector2(0,0):
 		$Run.stop()
 	else:
-		pass
-		#$Run.play()
+		$Run.play()
 	
 	
 	if velocity.x == 0 and velocity.y == 0 and not atacar:
