@@ -478,7 +478,6 @@ texture = ExtResource("1_065x0")
 position = Vector2(-54, -75)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.462745, 0.462745, 0.462745, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
