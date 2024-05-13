@@ -9,26 +9,27 @@ var vides = 3
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var collision_shape_atac = $HitBoxAtac/CollisionShape2D
 @onready var point_light_2d = $PointLight2D
-
+var kickback_strength := 200
+var kickback = false
 
 func _physics_process(delta):
 
 	direccio = Vector2(0,0)
 	velocity.x = 0
 	velocity.y = 0
-
-	if Input.is_action_pressed("Right") and atacar == false:
-		direccio.x += 10
-	if Input.is_action_pressed("Left") and atacar == false:
-		direccio.x += -10
-	if Input.is_action_pressed("Down") and atacar == false:
-		direccio.y += 10
-	if Input.is_action_pressed("Up") and atacar == false:
-		direccio.y += -10
-	if Input.is_action_just_pressed("atac"):
-		direccio = Vector2(0,0)
-		_atac()
-	velocity += direccio.normalized() * velocitat_maxima 
+	if not kickback:
+		if Input.is_action_pressed("Right") and atacar == false:
+			direccio.x += 10
+		if Input.is_action_pressed("Left") and atacar == false:
+			direccio.x += -10
+		if Input.is_action_pressed("Down") and atacar == false:
+			direccio.y += 10
+		if Input.is_action_pressed("Up") and atacar == false:
+			direccio.y += -10
+		if Input.is_action_just_pressed("atac"):
+			direccio = Vector2(0,0)
+			_atac()
+		velocity += direccio.normalized() * velocitat_maxima 
 	move_and_slide()
 	
 	
@@ -120,12 +121,20 @@ func guanya_clau():
 	print("Tinc una clau!")
 	tinc_clau = true
 
-func mal():
+func mal(pos_enemic):
 	vides -= 1
 	print("Au!")
 	if vides == 0:
 		self.mor()
+	else:
+		var direccio = -global_position.direction_to(pos_enemic)
+		kickback = true
+		var tween = create_tween()
+		tween.tween_property(self, "global_position", global_position + direccio*kickback_strength, 0.5).set_trans(Tween.TRANS_EXPO)
+		tween.finished.connect(kickback_acabat)
 	
+func kickback_acabat():
+	kickback = false
 	
 func mor():
 	get_tree().change_scene_to_packed(load("res://escenes/youdied.tscn"))
