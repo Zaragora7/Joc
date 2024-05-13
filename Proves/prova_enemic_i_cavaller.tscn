@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvi2lnct30vn"]
+[gd_scene load_steps=5 format=3 uid="uid://bvi2lnct30vn"]
 
 [ext_resource type="PackedScene" uid="uid://daksydx7xcxgw" path="res://escenes/Enemic.tscn" id="1_gj0q3"]
 [ext_resource type="PackedScene" uid="uid://ckrt4pgwi1us5" path="res://escenes/Cavaller_principal.tscn" id="2_l3n58"]
 [ext_resource type="PackedScene" uid="uid://bnowcgxnblqn0" path="res://Proves/Provaenemic.tscn" id="3_1i5fw"]
+[ext_resource type="PackedScene" uid="uid://b3njebg8umgka" path="res://enemic_de_prova.tscn" id="4_h3x34"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -12,5 +13,8 @@ position = Vector2(209, 243)
 [node name="CharacterBody2D2" parent="." instance=ExtResource("2_l3n58")]
 position = Vector2(643, 206)
 
-[node name="Area2D" parent="." instance=ExtResource("3_1i5fw")]
-position = Vector2(1011, 135)
+[node name="CharacterBody2D3" parent="." instance=ExtResource("3_1i5fw")]
+position = Vector2(988, 58)
+
+[node name="CharacterBody2D4" parent="." instance=ExtResource("4_h3x34")]
+position = Vector2(808, 542)

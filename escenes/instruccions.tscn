@@ -1,8 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4rlp1nshlihr"]
+[gd_scene load_steps=7 format=3 uid="uid://c4rlp1nshlihr"]
 
 [ext_resource type="Texture2D" uid="uid://rlik3bs3335l" path="res://escenes/mazmorra.jpeg" id="1_u1kw2"]
 [ext_resource type="Script" path="res://escenes/instruccions.gd" id="2_2yn2q"]
 [ext_resource type="FontFile" uid="uid://bc8edytfjkj1x" path="res://escenes/JABROWZKY.ttf" id="3_a5pdq"]
+[ext_resource type="Texture2D" uid="uid://dkephdc5qci8d" path="res://imatges/asdw.png" id="4_2qdyh"]
+
+[sub_resource type="Gradient" id="Gradient_toeq4"]
+offsets = PackedFloat32Array(0.672131, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kpi6e"]
+gradient = SubResource("Gradient_toeq4")
+fill = 1
+fill_from = Vector2(0.505376, 0.553763)
+fill_to = Vector2(0.83871, 0.225806)
 
 [node name="Node2D" type="Node2D"]
 
@@ -21,5 +32,29 @@ offset_bottom = -1397.88
 theme_override_fonts/font = ExtResource("3_a5pdq")
 theme_override_font_sizes/font_size = 150
 text = "back"
+
+[node name="Label" type="Label" parent="Mazmorra"]
+texture_filter = 1
+offset_left = -2269.91
+offset_top = -1236.23
+offset_right = 987.088
+offset_bottom = 445.775
+theme_override_font_sizes/font_size = 150
+text = "Utilitza les tecles A, W, S i D per moure't.
+
+Apreta la tecla d'espai per atacar!"
+
+[node name="Sprite2D" type="Sprite2D" parent="Mazmorra"]
+modulate = Color(0.99847, 0.99427, 0.996828, 1)
+texture_filter = 1
+position = Vector2(1451.33, -886.637)
+scale = Vector2(1.95188, 1.85568)
+texture = ExtResource("4_2qdyh")
+
+[node name="PointLight2D" type="PointLight2D" parent="Mazmorra/Sprite2D"]
+position = Vector2(-4.53385, -8.19079)
+scale = Vector2(13.3536, 11.3903)
+energy = 1.7
+texture = SubResource("GradientTexture2D_kpi6e")
 
 [connection signal="pressed" from="Mazmorra/back" to="Mazmorra" method="_on_back_pressed"]

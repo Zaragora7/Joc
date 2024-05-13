@@ -35,7 +35,7 @@ func _on_deteccio_body_exited(body):
 	detecta = false
 	pl = null
 
-func mor():
+func mort():
 	print("muerto")
 	queue_free()
 
