@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var vides = CavallerPrincipal.vides
+var vides = 3
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$claus.text = str(vides)

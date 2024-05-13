@@ -19,10 +19,6 @@ config/icon="res://imatges/icon.svg"
 
 buses/default_bus_layout="res://MúsicaSons/default_bus_layout.tres"
 
-[autoload]
-
-CavallerPrincipal="*res://Scripts/Cavaller_principal.gd"
-
 [input]
 
 Right={
