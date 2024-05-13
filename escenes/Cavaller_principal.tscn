@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://ckrt4pgwi1us5"]
+[gd_scene load_steps=38 format=3 uid="uid://ckrt4pgwi1us5"]
 
 [ext_resource type="Script" path="res://Scripts/Cavaller_principal.gd" id="1_5q85a"]
 [ext_resource type="Texture2D" uid="uid://i02xmcwqwt75" path="res://imatges/Blue Slash Thin/_Run.png" id="1_540m0"]
@@ -220,6 +220,9 @@ data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 1, 0,
 format = 1
 stereo = true
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_q22p7"]
+radius = 46.0
+
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 collision_mask = 23
 script = ExtResource("1_5q85a")
@@ -235,7 +238,7 @@ autoplay = "Idle"
 position = Vector2(-2.5, 42)
 shape = SubResource("CapsuleShape2D_ixa8j")
 
-[node name="HitBoxAtac" type="Area2D" parent="."]
+[node name="HitBoxAtac" type="Area2D" parent="." groups=["espasa"]]
 collision_mask = 48
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxAtac"]
@@ -260,5 +263,12 @@ pitch_scale = 0.8
 [node name="Run" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamWAV_ouoli")
 
+[node name="hitbox_cavaller" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox_cavaller"]
+position = Vector2(1, 46)
+shape = SubResource("CircleShape2D_q22p7")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="HitBoxAtac" to="." method="_on_hit_box_atac_area_entered"]
+[connection signal="body_entered" from="HitBoxAtac" to="." method="_on_hit_box_atac_body_entered"]
