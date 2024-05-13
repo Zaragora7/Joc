@@ -128,3 +128,6 @@ func mal():
 	
 func mor():
 	get_tree().change_scene_to_packed(load("res://escenes/youdied.tscn"))
+	
+	
+

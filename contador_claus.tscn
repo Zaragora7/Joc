@@ -1,23 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://d3ovvug6est5e"]
 
-[ext_resource type="Texture2D" uid="uid://bno2ehwvvok6l" path="res://imatges/key_porta_carrer-removebg-preview.png" id="1_j3yjg"]
 [ext_resource type="Script" path="res://ui_claus.gd" id="1_nxxpp"]
+[ext_resource type="Texture2D" uid="uid://67wi5ur8q1mx" path="res://imatges/pixel-heart.webp" id="2_j67ko"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_nxxpp")
-
-[node name="KeyPortaCarrer-removebg-preview" type="Sprite2D" parent="."]
-position = Vector2(1047, 35)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_j3yjg")
-
-[node name="claus" type="Label" parent="."]
-offset_left = 1101.0
-offset_top = 3.0
-offset_right = 1147.0
-offset_bottom = 58.0
-theme_override_font_sizes/font_size = 40
-text = "00"
 
 [node name="Label2" type="Label" parent="."]
 texture_filter = 1
@@ -30,5 +17,19 @@ offset_left = -469.744
 offset_top = -158.464
 offset_right = -428.744
 offset_bottom = 46.536
+pivot_offset = Vector2(-292, 342)
 theme_override_font_sizes/font_size = 40
 text = ":"
+
+[node name="claus" type="Label" parent="."]
+offset_left = 1101.0
+offset_top = 3.0
+offset_right = 1147.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 40
+text = "00"
+
+[node name="KeyPortaCarrer-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(1070, 35)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_j67ko")
