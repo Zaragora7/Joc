@@ -1,18 +1,15 @@
-extends CanvasLayer
+extends Area2D
 
-var vides = CavallerPrincipal.vides
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$claus.text = str(vides)
-	$Label2.text = str(":")
-	
-
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$claus.text = str(vides)
+	pass
 
 
-	
-
+func _on_body_entered(body):
+	get_tree().change_scene_to_file("res://escenes/youwon.tscn")

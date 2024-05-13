@@ -12,33 +12,32 @@ position = Vector2(545, 362)
 scale = Vector2(0.226, 0.197375)
 texture = ExtResource("1_8sfcr")
 
-[node name="història" type="Button" parent="Mazmorra"]
-offset_left = -500.0
-offset_top = -157.061
-offset_right = 478.0
-offset_bottom = 70.939
-theme_override_fonts/font = ExtResource("2_1vgfw")
-theme_override_font_sizes/font_size = 150
-text = "Història"
-
 [node name="instruccions" type="Button" parent="Mazmorra"]
 offset_left = -504.425
-offset_top = -557.315
+offset_top = 5.06616
 offset_right = 464.575
-offset_bottom = -329.315
+offset_bottom = 233.066
 theme_override_fonts/font = ExtResource("2_1vgfw")
 theme_override_font_sizes/font_size = 150
 text = "Instruccions"
 
 [node name="nivells" type="Button" parent="Mazmorra"]
 offset_left = -509.0
-offset_top = -953.0
+offset_top = -476.749
 offset_right = 460.0
-offset_bottom = -730.0
+offset_bottom = -253.749
 theme_override_fonts/font = ExtResource("2_1vgfw")
 theme_override_font_sizes/font_size = 150
 text = "Jugar!"
 
-[connection signal="pressed" from="Mazmorra/història" to="." method="_on_història_pressed"]
+[node name="Label" type="Label" parent="Mazmorra"]
+offset_left = -455.752
+offset_top = -1281.82
+offset_right = 476.248
+offset_bottom = -799.82
+theme_override_fonts/font = ExtResource("2_1vgfw")
+theme_override_font_sizes/font_size = 500
+text = "INICI"
+
 [connection signal="pressed" from="Mazmorra/instruccions" to="." method="_on_instruccions_pressed"]
 [connection signal="pressed" from="Mazmorra/nivells" to="." method="_on_nivells_pressed"]
