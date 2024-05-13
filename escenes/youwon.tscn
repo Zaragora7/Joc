@@ -1,3 +1,47 @@
-[gd_scene format=3 uid="uid://bhhm5r76ybv4s"]
+[gd_scene load_steps=3 format=3 uid="uid://bhhm5r76ybv4s"]
+
+[ext_resource type="Texture2D" uid="uid://kc65tp26cvau" path="res://imatges/porta mazmorra.jpg" id="1_68q25"]
+[ext_resource type="Script" path="res://escenes/youwon.gd" id="1_wi2gs"]
 
 [node name="youwon" type="Node2D"]
+script = ExtResource("1_wi2gs")
+
+[node name="PortaMazmorra" type="Sprite2D" parent="."]
+position = Vector2(573, 330)
+scale = Vector2(2.16296, 1.83889)
+texture = ExtResource("1_68q25")
+
+[node name="Label" type="Label" parent="PortaMazmorra"]
+offset_left = -246.421
+offset_top = -166.949
+offset_right = 149.579
+offset_bottom = -8.94865
+theme_override_font_sizes/font_size = 35
+text = "𝐌𝐎𝐋𝐓𝐄𝐒 𝐅𝐄𝐋𝐂𝐈𝐓𝐀𝐓𝐒 
+𝐇𝐀𝐒 𝐏𝐀𝐒𝐒𝐀𝐓 
+𝐄𝐋 𝐉𝐎𝐂!"
+
+[node name="Button" type="Button" parent="PortaMazmorra"]
+offset_left = 97.5513
+offset_top = 55.4683
+offset_right = 239.551
+offset_bottom = 86.4683
+text = "TORNAR A JUGAR"
+
+[node name="Button3" type="Button" parent="PortaMazmorra"]
+offset_left = 97.5513
+offset_top = 94.6224
+offset_right = 240.551
+offset_bottom = 125.622
+text = "TORNAR A L'INICI"
+
+[node name="Button2" type="Button" parent="PortaMazmorra"]
+offset_left = 97.5513
+offset_top = 138.127
+offset_right = 239.551
+offset_bottom = 169.127
+text = "SORTIR"
+
+[connection signal="pressed" from="PortaMazmorra/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PortaMazmorra/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="PortaMazmorra/Button2" to="." method="_on_button_2_pressed"]

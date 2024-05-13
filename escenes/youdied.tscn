@@ -1,3 +1,37 @@
-[gd_scene format=3 uid="uid://ba3k2bbk6ss20"]
+[gd_scene load_steps=3 format=3 uid="uid://ba3k2bbk6ss20"]
+
+[ext_resource type="Texture2D" uid="uid://coq2t4lthabkv" path="res://imatges/castillo-mazmorra-interior-ai-stone-paredes-ladrillo-antorchas_154797-711.jpg" id="1_2pisj"]
+[ext_resource type="Script" path="res://escenes/youdied.gd" id="1_25jws"]
 
 [node name="youdied" type="Node2D"]
+script = ExtResource("1_25jws")
+
+[node name="Castillo-mazmorra-interior-ai-stone-paredes-ladrillo-antorchas154797-711" type="Sprite2D" parent="."]
+position = Vector2(577, 324)
+scale = Vector2(1.86901, 1.56835)
+texture = ExtResource("1_2pisj")
+
+[node name="Button" type="Button" parent="Castillo-mazmorra-interior-ai-stone-paredes-ladrillo-antorchas154797-711"]
+offset_left = -60.4598
+offset_top = -7.65139
+offset_right = 82.5402
+offset_bottom = 23.3486
+text = "TORNAR A L'INICI"
+
+[node name="Button2" type="Button" parent="Castillo-mazmorra-interior-ai-stone-paredes-ladrillo-antorchas154797-711"]
+offset_left = -60.4598
+offset_top = 28.055
+offset_right = 82.5402
+offset_bottom = 59.055
+text = "SORTIR"
+
+[node name="Label" type="Label" parent="Castillo-mazmorra-interior-ai-stone-paredes-ladrillo-antorchas154797-711"]
+offset_left = -193.15
+offset_top = -155.578
+offset_right = 257.85
+offset_bottom = -58.578
+theme_override_font_sizes/font_size = 70
+text = "𝐇𝐀𝐒 𝐏𝐄𝐑𝐃𝐔𝐓!"
+
+[connection signal="pressed" from="Castillo-mazmorra-interior-ai-stone-paredes-ladrillo-antorchas154797-711/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Castillo-mazmorra-interior-ai-stone-paredes-ladrillo-antorchas154797-711/Button2" to="." method="_on_button_2_pressed"]
