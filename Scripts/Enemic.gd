@@ -32,6 +32,5 @@ func mort():
 
 func _on_hitboxenemic_body_entered(body):
 	if body.has_method("mor"):
-		body.mal()
-		queue_free()
+		body.mal(global_position)
 		print("he tret una vida")

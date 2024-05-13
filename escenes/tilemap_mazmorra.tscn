@@ -532,3 +532,24 @@ position = Vector2(1035, -2883)
 
 [node name="EnemicAleatori3" parent="." instance=ExtResource("3_0s5jp")]
 position = Vector2(1086, -2808)
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("7_futi6")]
+position = Vector2(1073, -2161)
+
+[node name="CharacterBody2D4" parent="." instance=ExtResource("7_futi6")]
+position = Vector2(2071, -2752)
+
+[node name="CharacterBody2D5" parent="." instance=ExtResource("7_futi6")]
+position = Vector2(1858, -2098)
+
+[node name="CharacterBody2D6" parent="." instance=ExtResource("7_futi6")]
+position = Vector2(2616, -1310)
+
+[node name="CharacterBody2D7" parent="." instance=ExtResource("7_futi6")]
+position = Vector2(2694, -1058)
+
+[node name="CharacterBody2D8" parent="." instance=ExtResource("7_futi6")]
+position = Vector2(1663, -292)
+
+[node name="CharacterBody2D9" parent="." instance=ExtResource("7_futi6")]
+position = Vector2(2575, -60)

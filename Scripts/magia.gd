@@ -26,5 +26,5 @@ func mor():
 
 func _on_body_entered(body:PhysicsBody2D):
 	if body.has_method("mal"):
-		body.mal()
+		body.mal(global_position)
 	mor()
