@@ -3,26 +3,16 @@ var velocitat := 20
 var pl = null
 var detecta := false
 var vidas = 3
-const SPEED = 50
-var playerr = false
-var plbody = null
-var vector_knockback = Vector2()
-var força = 100
-var direccio_enemic = Vector2()
-var mortenemic = false
+var SPEED = 60
+
 
 
 func _physics_process(delta):
 	if detecta:
+		$AnimatedSprite2D.play("run")
 		position += (pl.position -position) / SPEED
-	if mortenemic:
-		queue_free()
-		
-		
-
-
-
-
+	else:
+		$AnimatedSprite2D.play("idle")
 
 
 func _on_deteccio_body_entered(body):
@@ -32,12 +22,16 @@ func _on_deteccio_body_entered(body):
 
 
 func _on_deteccio_body_exited(body):
-	detecta = false
-	pl = null
+	#detecta = false
+	#pl = null
+	pass
 
 func mort():
 	print("muerto")
 	queue_free()
 
 func _on_hitboxenemic_body_entered(body):
-	pass
+	if body.has_method("mor"):
+		body.mal()
+		queue_free()
+		print("he tret una vida")
