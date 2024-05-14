@@ -9,7 +9,7 @@ var vides = 3
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var collision_shape_atac = $HitBoxAtac/CollisionShape2D
 @onready var point_light_2d = $PointLight2D
-var kickback_strength := 200
+var kickback_strength := 125
 var kickback = false
 
 func _physics_process(delta):

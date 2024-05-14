@@ -3,7 +3,7 @@ var velocitat := 20
 var pl = null
 var detecta := false
 var vidas = 3
-var SPEED = 60
+var SPEED = 40
 
 
 
