@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3ovvug6est5e"]
+[gd_scene load_steps=3 format=3 uid="uid://d3ovvug6est5e"]
 
+[ext_resource type="Script" path="res://Scripts/contador_claus.gd" id="1_m2h42"]
 [ext_resource type="Texture2D" uid="uid://67wi5ur8q1mx" path="res://imatges/pixel-heart.webp" id="2_j67ko"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_m2h42")
 
 [node name="KeyPortaCarrer-removebg-preview" type="Sprite2D" parent="."]
 position = Vector2(1070, 35)

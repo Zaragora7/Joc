@@ -19,6 +19,10 @@ config/icon="res://imatges/icon.svg"
 
 buses/default_bus_layout="res://MúsicaSons/default_bus_layout.tres"
 
+[autoload]
+
+Global="*res://Scripts/global.gd"
+
 [input]
 
 Right={

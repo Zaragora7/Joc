@@ -5,7 +5,10 @@ var direccio := Vector2(0, 0)
 var velocitat_maxima = 200
 var atacar:bool = false
 var tinc_clau := false
-var vides = 3
+var vides := 3:
+	set(noves_vides):
+		vides = noves_vides
+		Global.Contador.canvia_vides(vides)
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var collision_shape_atac = $HitBoxAtac/CollisionShape2D
 @onready var point_light_2d = $PointLight2D
