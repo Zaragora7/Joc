@@ -13,5 +13,5 @@ func _on_button_3_pressed():
 
 
 func _on_button_2_pressed():
-	get_tree().quit
+	get_tree().quit()
 	pass # Replace with function body.

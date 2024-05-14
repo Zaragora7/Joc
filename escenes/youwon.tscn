@@ -8,11 +8,13 @@
 script = ExtResource("1_wi2gs")
 
 [node name="PortaMazmorra" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(573, 330)
 scale = Vector2(2.16296, 1.83889)
 texture = ExtResource("1_68q25")
 
 [node name="Label" type="Label" parent="PortaMazmorra"]
+texture_filter = 1
 offset_left = -246.421
 offset_top = -166.949
 offset_right = 149.579

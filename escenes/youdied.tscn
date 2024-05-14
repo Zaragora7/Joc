@@ -7,6 +7,7 @@
 script = ExtResource("1_25jws")
 
 [node name="Castillo-mazmorra-interior-ai-stone-paredes-ladrillo-antorchas154797-711" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(577, 324)
 scale = Vector2(1.86901, 1.56835)
 texture = ExtResource("1_2pisj")
@@ -26,6 +27,7 @@ offset_bottom = 59.055
 text = "SORTIR"
 
 [node name="Label" type="Label" parent="Castillo-mazmorra-interior-ai-stone-paredes-ladrillo-antorchas154797-711"]
+texture_filter = 1
 offset_left = -193.15
 offset_top = -155.578
 offset_right = 257.85
