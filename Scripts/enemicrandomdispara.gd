@@ -8,7 +8,8 @@ func _on_timer_timeout():
 func dispara():
 	var magia: PackedScene = load("res://escenes/magia.tscn")
 	nova_magia = magia.instantiate()
-	
+	$AnimatedSprite2D.play("default")
+	$petardo.play()
 	add_child(nova_magia)
 	nova_magia.global_position = self.global_position
 	nova_magia.rotation = global_rotation

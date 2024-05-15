@@ -1,10 +1,11 @@
-[gd_scene load_steps=38 format=3 uid="uid://ckrt4pgwi1us5"]
+[gd_scene load_steps=39 format=3 uid="uid://ckrt4pgwi1us5"]
 
 [ext_resource type="Script" path="res://Scripts/Cavaller_principal.gd" id="1_5q85a"]
 [ext_resource type="Texture2D" uid="uid://i02xmcwqwt75" path="res://imatges/Blue Slash Thin/_Run.png" id="1_540m0"]
 [ext_resource type="Texture2D" uid="uid://cf7n3i3iuvsrv" path="res://imatges/Blue Slash Thin/_Idle.png" id="2_q6yoc"]
 [ext_resource type="Texture2D" uid="uid://b8l43nm73mwno" path="res://imatges/Blue Slash Thin/_Attack2.png" id="4_1ych2"]
 [ext_resource type="AudioStream" uid="uid://cypweggv7ycup" path="res://MúsicaSons/SwordSlash.ogg" id="5_olaru"]
+[ext_resource type="AudioStream" uid="uid://ba1mhnudrd1fr" path="res://Take Damage definitivo Sound Effect [ ezmp3.cc ].wav" id="6_c8p5o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2mvtm"]
 atlas = ExtResource("2_q6yoc")
@@ -262,6 +263,9 @@ pitch_scale = 0.8
 
 [node name="Run" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamWAV_ouoli")
+
+[node name="take_damage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_c8p5o")
 
 [node name="hitbox_cavaller" type="Area2D" parent="."]
 

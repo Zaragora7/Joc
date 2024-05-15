@@ -2,14 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://wqly4hud164k" path="res://imatges/Dungeon_Character.png" id="1_grhjc"]
 [ext_resource type="Script" path="res://Scripts/enemicrandomdispara.gd" id="2_hpk2s"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pn8bi"]
-atlas = ExtResource("1_grhjc")
-region = Rect2(96, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mk8j2"]
-atlas = ExtResource("1_grhjc")
-region = Rect2(80, 0, 16, 16)
+[ext_resource type="AudioStream" uid="uid://b1flrox0samir" path="res://Efecto de sonido definitivo (fuego artificial de minecraft).wav" id="3_r6mh7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xi2wm"]
 atlas = ExtResource("1_grhjc")
@@ -19,15 +12,13 @@ region = Rect2(0, 0, 16, 16)
 atlas = ExtResource("1_grhjc")
 region = Rect2(80, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_82ejj"]
+atlas = ExtResource("1_grhjc")
+region = Rect2(96, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_122qi"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pn8bi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mk8j2")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xi2wm")
 }, {
@@ -36,6 +27,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82ejj")
+}],
+"loop": true,
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -60,7 +59,7 @@ script = ExtResource("2_hpk2s")
 texture_filter = 1
 scale = Vector2(2.125, 2.5)
 sprite_frames = SubResource("SpriteFrames_122qi")
-frame_progress = 0.630024
+frame_progress = 0.863873
 
 [node name="Timer" type="Timer" parent="AnimatedSprite2D"]
 wait_time = 0.5
@@ -72,5 +71,8 @@ shape = SubResource("RectangleShape2D_mcgvs")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 texture = SubResource("GradientTexture2D_3t4j7")
+
+[node name="petardo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_r6mh7")
 
 [connection signal="timeout" from="AnimatedSprite2D/Timer" to="." method="_on_timer_timeout"]

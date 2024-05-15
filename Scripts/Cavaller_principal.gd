@@ -125,6 +125,7 @@ func guanya_clau():
 
 func mal(pos_enemic):
 	vides -= 1
+	$take_damage.play()
 	print("Au!")
 	if vides == 0:
 		self.mor()

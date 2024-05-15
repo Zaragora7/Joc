@@ -1,5 +1,5 @@
 extends Area2D
-var speed = 100
+var speed = 20
 var direction
 
 # Called when the node enters the scene tree for the first time.
