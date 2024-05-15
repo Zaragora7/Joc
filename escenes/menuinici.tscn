@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwv656sgb6ase"]
+[gd_scene load_steps=5 format=3 uid="uid://cwv656sgb6ase"]
 
 [ext_resource type="Texture2D" uid="uid://rlik3bs3335l" path="res://escenes/mazmorra.jpeg" id="1_8sfcr"]
 [ext_resource type="Script" path="res://Scripts/menuinici.gd" id="1_cq87t"]
 [ext_resource type="FontFile" uid="uid://bc8edytfjkj1x" path="res://escenes/JABROWZKY.ttf" id="2_1vgfw"]
+[ext_resource type="AudioStream" uid="uid://cb0s0rhuerx4p" path="res://C418  - Sweden - Minecraft Volume Alpha [ ezmp3.cc ].mp3" id="4_sejvx"]
 
 [node name="menu prrincipal" type="Node2D"]
 script = ExtResource("1_cq87t")
@@ -38,6 +39,9 @@ offset_bottom = -799.82
 theme_override_fonts/font = ExtResource("2_1vgfw")
 theme_override_font_sizes/font_size = 500
 text = "INICI"
+
+[node name="musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_sejvx")
 
 [connection signal="pressed" from="Mazmorra/instruccions" to="." method="_on_instruccions_pressed"]
 [connection signal="pressed" from="Mazmorra/nivells" to="." method="_on_nivells_pressed"]

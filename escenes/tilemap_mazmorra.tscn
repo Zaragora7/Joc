@@ -592,3 +592,24 @@ position = Vector2(-143, -1461)
 position = Vector2(1.00002, 197)
 scale = Vector2(6.39453, 6.37111)
 texture = SubResource("GradientTexture2D_5be77")
+
+[node name="EnemicAleatori4" parent="." instance=ExtResource("3_0s5jp")]
+position = Vector2(1143, -1207)
+
+[node name="EnemicAleatori5" parent="." instance=ExtResource("3_0s5jp")]
+position = Vector2(2147, -441)
+
+[node name="EnemicAleatori7" parent="." instance=ExtResource("3_0s5jp")]
+position = Vector2(2104, -1606)
+
+[node name="EnemicAleatori8" parent="." instance=ExtResource("3_0s5jp")]
+position = Vector2(1465, -119)
+
+[node name="CharacterBody2D10" parent="." instance=ExtResource("7_futi6")]
+position = Vector2(-328, -1239)
+
+[node name="CharacterBody2D11" parent="." instance=ExtResource("7_futi6")]
+position = Vector2(1929, -549)
+
+[node name="CharacterBody2D13" parent="." instance=ExtResource("7_futi6")]
+position = Vector2(2466, -1555)
