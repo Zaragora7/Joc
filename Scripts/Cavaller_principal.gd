@@ -8,7 +8,7 @@ var tinc_clau := false
 var vides := 3:
 	set(noves_vides):
 		vides = noves_vides
-		Global.Contador.canvia_vides(vides)
+		Global.canvia_vides(vides)
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var collision_shape_atac = $HitBoxAtac/CollisionShape2D
 @onready var point_light_2d = $PointLight2D
@@ -139,7 +139,7 @@ func kickback_acabat():
 	kickback = false
 	
 func mor():
-	get_tree().change_scene_to_packed(load("res://escenes/youdied.tscn"))
+	Global.mor()
 
 
 

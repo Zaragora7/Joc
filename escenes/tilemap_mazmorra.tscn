@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dafh6pi731uou"]
+[gd_scene load_steps=19 format=3 uid="uid://dafh6pi731uou"]
 
 [ext_resource type="Texture2D" uid="uid://cl6iejjimifoy" path="res://imatges/negre.jpg" id="1_065x0"]
 [ext_resource type="Texture2D" uid="uid://d08yr8m83h2ao" path="res://imatges/Dungeon_Tileset.png" id="1_ntd5e"]
@@ -7,7 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://l6bf0e6ao0f4" path="res://escenes/claucarrer.tscn" id="5_v8mhe"]
 [ext_resource type="PackedScene" uid="uid://bsrrassf03mv0" path="res://escenes/porta.tscn" id="6_hj84r"]
 [ext_resource type="PackedScene" uid="uid://daksydx7xcxgw" path="res://escenes/Enemic.tscn" id="7_futi6"]
+[ext_resource type="Script" path="res://escenes/canvas.gd" id="7_r5nh3"]
+[ext_resource type="Script" path="res://escenes/CAnvas2.gd" id="7_srckm"]
+[ext_resource type="FontFile" uid="uid://bc8edytfjkj1x" path="res://escenes/JABROWZKY.ttf" id="9_2jlnh"]
 [ext_resource type="PackedScene" uid="uid://tvrsao1kdc1u" path="res://escenes/gema.tscn" id="9_w2va7"]
+[ext_resource type="Texture2D" uid="uid://67wi5ur8q1mx" path="res://imatges/pixel-heart.webp" id="10_ouqm1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y20aw"]
 texture = ExtResource("1_ntd5e")
@@ -502,6 +506,26 @@ position = Vector2(96, -322)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_4ijm3")]
 position = Vector2(-19, 192)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody2D"]
+script = ExtResource("7_srckm")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="CharacterBody2D"]
+script = ExtResource("7_r5nh3")
+
+[node name="Label" type="Label" parent="CharacterBody2D/CanvasLayer2"]
+offset_left = 22.0
+offset_top = 5.0
+offset_right = 56.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("9_2jlnh")
+theme_override_font_sizes/font_size = 30
+text = "  3"
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/CanvasLayer2"]
+position = Vector2(68, 19)
+scale = Vector2(0.0351563, 0.0359375)
+texture = ExtResource("10_ouqm1")
 
 [node name="Porta2" parent="." instance=ExtResource("6_hj84r")]
 position = Vector2(1581, -749)
