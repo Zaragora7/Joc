@@ -1,80 +1,61 @@
-[gd_scene load_steps=12 format=3 uid="uid://bsrrassf03mv0"]
+[gd_scene load_steps=9 format=3 uid="uid://bsrrassf03mv0"]
 
-[ext_resource type="Texture2D" uid="uid://r51vwbwpum5i" path="res://imatges/open_door-removebg-preview.png" id="1_w5nmg"]
 [ext_resource type="Script" path="res://Scripts/porta.gd" id="2_oka41"]
+[ext_resource type="Texture2D" uid="uid://bwcy6na75wg7p" path="res://Door3_pipo.png" id="2_t4kkq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ft8cg"]
-atlas = ExtResource("1_w5nmg")
-region = Rect2(0, 0, 127, 163)
+[sub_resource type="CircleShape2D" id="CircleShape2D_h0mdm"]
+radius = 89.8053
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ywhxy"]
-atlas = ExtResource("1_w5nmg")
-region = Rect2(127, 0, 127, 163)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3prq8"]
+size = Vector2(129, 112)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cxwos"]
-atlas = ExtResource("1_w5nmg")
-region = Rect2(254, 0, 127, 163)
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4fcf"]
+atlas = ExtResource("2_t4kkq")
+region = Rect2(0, 0, 64, 96)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1bnek"]
-atlas = ExtResource("1_w5nmg")
-region = Rect2(381, 0, 127, 163)
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2mwp"]
+atlas = ExtResource("2_t4kkq")
+region = Rect2(64, 0, 64, 96)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m0qv1"]
-atlas = ExtResource("1_w5nmg")
-region = Rect2(508, 0, 127, 163)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wkh5g"]
-atlas = ExtResource("1_w5nmg")
-region = Rect2(635, 0, 127, 163)
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8w0p"]
+atlas = ExtResource("2_t4kkq")
+region = Rect2(128, 0, 64, 96)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1ldpp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ft8cg")
+"texture": SubResource("AtlasTexture_p4fcf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ywhxy")
+"texture": SubResource("AtlasTexture_k2mwp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cxwos")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1bnek")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m0qv1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wkh5g")
+"texture": SubResource("AtlasTexture_v8w0p")
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3prq8"]
-size = Vector2(129, 112)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_h0mdm"]
-radius = 89.8053
 
 [node name="Porta" type="StaticBody2D"]
 collision_layer = 4
 script = ExtResource("2_oka41")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_1ldpp")
-frame_progress = 0.9489
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 3)
-shape = SubResource("RectangleShape2D_3prq8")
 
 [node name="DetectorPersonatge" type="Area2D" parent="."]
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorPersonatge"]
 shape = SubResource("CircleShape2D_h0mdm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 3)
+shape = SubResource("RectangleShape2D_3prq8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -22)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_1ldpp")
+frame_progress = 0.9489
 
 [connection signal="body_entered" from="DetectorPersonatge" to="." method="_on_detector_personatge_body_entered"]

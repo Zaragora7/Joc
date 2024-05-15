@@ -506,7 +506,7 @@ visible = false
 position = Vector2(145, -241)
 
 [node name="Porta" parent="." instance=ExtResource("6_hj84r")]
-position = Vector2(-38, -526)
+position = Vector2(-31, -515)
 
 [node name="Area2D" parent="." instance=ExtResource("5_v8mhe")]
 position = Vector2(204, -1254)
