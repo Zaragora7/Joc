@@ -3,7 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$musica.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,4 +20,5 @@ func _on_instruccions_pressed():
 
 
 func _on_nivells_pressed():
+	$musica.stop()
 	get_tree().change_scene_to_packed(load("res://escenes/tilemap_mazmorra.tscn"))
