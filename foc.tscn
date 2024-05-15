@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=3 uid="uid://bcr5i5groiqjt"]
+
+[ext_resource type="Texture2D" uid="uid://bsrtbrxos646p" path="res://imatges/animated_torch.png" id="1_crq4e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kil8m"]
+atlas = ExtResource("1_crq4e")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7w8d"]
+atlas = ExtResource("1_crq4e")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5owqo"]
+atlas = ExtResource("1_crq4e")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p38am"]
+atlas = ExtResource("1_crq4e")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cottp"]
+atlas = ExtResource("1_crq4e")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07bdu"]
+atlas = ExtResource("1_crq4e")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88cfk"]
+atlas = ExtResource("1_crq4e")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bb3kt"]
+atlas = ExtResource("1_crq4e")
+region = Rect2(256, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plk8j"]
+atlas = ExtResource("1_crq4e")
+region = Rect2(224, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kag3e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kil8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7w8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5owqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p38am")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cottp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07bdu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88cfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bb3kt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plk8j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e8iu1"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 5.37
+angle_min = -534.8
+angle_max = -38.6
+gravity = Vector3(0, -98, 0)
+linear_accel_min = -20.0
+linear_accel_max = 20.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_kag3e")
+frame_progress = 0.145236
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(1, 0, 0.152941, 1)
+self_modulate = Color(1, 0.317647, 0.12549, 1)
+position = Vector2(0, -10)
+amount = 14
+process_material = SubResource("ParticleProcessMaterial_e8iu1")
