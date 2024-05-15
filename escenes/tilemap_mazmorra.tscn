@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dafh6pi731uou"]
+[gd_scene load_steps=15 format=3 uid="uid://dafh6pi731uou"]
 
 [ext_resource type="Texture2D" uid="uid://cl6iejjimifoy" path="res://imatges/negre.jpg" id="1_065x0"]
 [ext_resource type="Texture2D" uid="uid://d08yr8m83h2ao" path="res://imatges/Dungeon_Tileset.png" id="1_ntd5e"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://l6bf0e6ao0f4" path="res://escenes/claucarrer.tscn" id="5_v8mhe"]
 [ext_resource type="PackedScene" uid="uid://bsrrassf03mv0" path="res://escenes/porta.tscn" id="6_hj84r"]
 [ext_resource type="PackedScene" uid="uid://daksydx7xcxgw" path="res://escenes/Enemic.tscn" id="7_futi6"]
-[ext_resource type="PackedScene" uid="uid://d3ovvug6est5e" path="res://contador_claus.tscn" id="8_tkwcm"]
 [ext_resource type="PackedScene" uid="uid://tvrsao1kdc1u" path="res://escenes/gema.tscn" id="9_w2va7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y20aw"]
@@ -518,8 +517,6 @@ position = Vector2(2798, -1397)
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("7_futi6")]
 position = Vector2(639, -1171)
-
-[node name="CanvasLayer" parent="." instance=ExtResource("8_tkwcm")]
 
 [node name="Porta4" parent="." instance=ExtResource("6_hj84r")]
 position = Vector2(2122, -1821)
