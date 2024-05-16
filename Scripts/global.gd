@@ -1,7 +1,7 @@
 extends Node
 
 var Contador:CanvasLayer
-var vides = 3
+var vides = 5
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
