@@ -177,27 +177,27 @@ animations = [{
 "speed": 9.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.2,
 "texture": SubResource("AtlasTexture_nw3yl")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_352v6")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kxjyb")
 }, {
-"duration": 1.0,
+"duration": 1.4,
 "texture": SubResource("AtlasTexture_iq2mu")
 }, {
-"duration": 1.0,
+"duration": 1.4,
 "texture": SubResource("AtlasTexture_08v8k")
 }, {
-"duration": 1.0,
+"duration": 1.4,
 "texture": SubResource("AtlasTexture_ub5ub")
 }],
 "loop": false,
 "name": &"atac2",
-"speed": 10.0
+"speed": 12.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ixa8j"]
@@ -234,6 +234,8 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_18hp8")
 animation = &"atac2"
 autoplay = "Idle"
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.5, 42)
