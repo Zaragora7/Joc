@@ -13,4 +13,4 @@ func canvia_vides(pos_enemic):
 		
 func mor():
 		get_tree().change_scene_to_packed(load("res://escenes/youdied.tscn"))
-		vides = 3
+		vides = 5

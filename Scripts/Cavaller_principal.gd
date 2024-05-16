@@ -5,7 +5,7 @@ var direccio := Vector2(0, 0)
 var velocitat_maxima = 200
 var atacar:bool = false
 var tinc_clau := false
-var vides := 3:
+var vides := 5:
 	set(noves_vides):
 		vides = noves_vides
 		Global.canvia_vides(vides)
