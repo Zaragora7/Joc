@@ -12,7 +12,7 @@ var vides := 5:
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var collision_shape_atac = $HitBoxAtac/CollisionShape2D
 @onready var point_light_2d = $PointLight2D
-var kickback_strength := 125
+var kickback_strength := 50
 var kickback = false
 
 func _physics_process(delta):
@@ -134,7 +134,7 @@ func mal(pos_enemic):
 		var direccio = -global_position.direction_to(pos_enemic)
 		kickback = true
 		var tween = create_tween()
-		tween.tween_property(self, "global_position", global_position + direccio*kickback_strength, 0.5).set_trans(Tween.TRANS_EXPO)
+		tween.tween_property(self, "global_position", global_position + direccio*kickback_strength, 0.2).set_trans(Tween.TRANS_EXPO)
 		tween.finished.connect(kickback_acabat)
 	
 func kickback_acabat():
