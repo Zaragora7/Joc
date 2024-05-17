@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://rlik3bs3335l" path="res://escenes/mazmorra.jpeg" id="1_8sfcr"]
 [ext_resource type="Script" path="res://Scripts/menuinici.gd" id="1_cq87t"]
 [ext_resource type="FontFile" uid="uid://bc8edytfjkj1x" path="res://escenes/JABROWZKY.ttf" id="2_1vgfw"]
-[ext_resource type="AudioStream" uid="uid://cb0s0rhuerx4p" path="res://C418  - Sweden - Minecraft Volume Alpha [ ezmp3.cc ].mp3" id="4_sejvx"]
+[ext_resource type="AudioStream" uid="uid://cb0s0rhuerx4p" path="res://MúsicaSons/C418  - Sweden - Minecraft Volume Alpha [ ezmp3.cc ].mp3" id="4_sejvx"]
 
 [node name="menu prrincipal" type="Node2D"]
 script = ExtResource("1_cq87t")

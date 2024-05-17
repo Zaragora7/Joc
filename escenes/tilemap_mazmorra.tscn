@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://dafh6pi731uou"]
+[gd_scene load_steps=24 format=3 uid="uid://dafh6pi731uou"]
 
+[ext_resource type="Script" path="res://escenes/tilemap.gd" id="1_4i5rp"]
 [ext_resource type="Texture2D" uid="uid://cl6iejjimifoy" path="res://imatges/negre.jpg" id="1_065x0"]
 [ext_resource type="Texture2D" uid="uid://d08yr8m83h2ao" path="res://imatges/Dungeon_Tileset.png" id="1_ntd5e"]
 [ext_resource type="PackedScene" uid="uid://ckrt4pgwi1us5" path="res://escenes/Cavaller_principal.tscn" id="2_4ijm3"]
@@ -13,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://tvrsao1kdc1u" path="res://escenes/gema.tscn" id="9_w2va7"]
 [ext_resource type="Texture2D" uid="uid://67wi5ur8q1mx" path="res://imatges/pixel-heart.webp" id="10_ouqm1"]
 [ext_resource type="PackedScene" uid="uid://bcr5i5groiqjt" path="res://fuego.tscn" id="13_yh3eu"]
+[ext_resource type="AudioStream" uid="uid://b8hdeshk686y" path="res://MúsicaSons/Vampire Survivors Soundtrack -  Reincarnated Echoes (looping) [ ezmp3.cc ].mp3" id="14_cojre"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y20aw"]
 texture = ExtResource("1_ntd5e")
@@ -467,6 +469,7 @@ fill_from = Vector2(0.516667, 0.00555556)
 fill_to = Vector2(0.544444, 0.544444)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_4i5rp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(189, 696)
@@ -505,7 +508,7 @@ visible = false
 position = Vector2(145, -241)
 
 [node name="Porta" parent="." instance=ExtResource("6_hj84r")]
-position = Vector2(-31, -515)
+position = Vector2(-33, -549)
 
 [node name="Area2D" parent="." instance=ExtResource("5_v8mhe")]
 position = Vector2(204, -1254)
@@ -537,7 +540,8 @@ scale = Vector2(0.0351563, 0.0359375)
 texture = ExtResource("10_ouqm1")
 
 [node name="Porta2" parent="." instance=ExtResource("6_hj84r")]
-position = Vector2(1581, -749)
+position = Vector2(1582, -824)
+scale = Vector2(1.3, 1.3)
 
 [node name="Porta3" parent="." instance=ExtResource("6_hj84r")]
 position = Vector2(2898, -648)
@@ -549,7 +553,7 @@ position = Vector2(2152, -639)
 position = Vector2(2798, -1397)
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("7_futi6")]
-position = Vector2(639, -1171)
+position = Vector2(652, -1240)
 
 [node name="Porta4" parent="." instance=ExtResource("6_hj84r")]
 position = Vector2(2122, -1821)
@@ -608,7 +612,10 @@ position = Vector2(1465, -119)
 position = Vector2(-269, -1233)
 
 [node name="CharacterBody2D11" parent="." instance=ExtResource("7_futi6")]
-position = Vector2(1929, -549)
+position = Vector2(1943, -565)
 
 [node name="CharacterBody2D13" parent="." instance=ExtResource("7_futi6")]
 position = Vector2(2466, -1555)
+
+[node name="musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_cojre")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ct8rveya4hlj2"
+path="res://.godot/imported/Minecraft XP Sound [ ezmp3.cc ].mp3-a3933ced6d05b14ba8ceb5bc17cc8b4c.mp3str"
+
+[deps]
+
+source_file="res://MúsicaSons/Minecraft XP Sound [ ezmp3.cc ].mp3"
+dest_files=["res://.godot/imported/Minecraft XP Sound [ ezmp3.cc ].mp3-a3933ced6d05b14ba8ceb5bc17cc8b4c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

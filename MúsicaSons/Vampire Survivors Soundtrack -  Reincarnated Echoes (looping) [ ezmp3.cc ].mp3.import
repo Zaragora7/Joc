@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8hdeshk686y"
+path="res://.godot/imported/Vampire Survivors Soundtrack -  Reincarnated Echoes (looping) [ ezmp3.cc ].mp3-6cea54bb900ef9a2792844d85bebc14e.mp3str"
+
+[deps]
+
+source_file="res://MúsicaSons/Vampire Survivors Soundtrack -  Reincarnated Echoes (looping) [ ezmp3.cc ].mp3"
+dest_files=["res://.godot/imported/Vampire Survivors Soundtrack -  Reincarnated Echoes (looping) [ ezmp3.cc ].mp3-6cea54bb900ef9a2792844d85bebc14e.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

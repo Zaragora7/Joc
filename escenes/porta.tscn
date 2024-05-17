@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsrrassf03mv0"]
+[gd_scene load_steps=10 format=3 uid="uid://bsrrassf03mv0"]
 
 [ext_resource type="Script" path="res://Scripts/porta.gd" id="2_oka41"]
 [ext_resource type="Texture2D" uid="uid://bwcy6na75wg7p" path="res://Door3_pipo.png" id="2_t4kkq"]
+[ext_resource type="AudioStream" uid="uid://c2cd7x2f5kf3r" path="res://MúsicaSons/Minecraft Door (Open and Close) - Sound Effect (HD) [ ezmp3.cc ].wav" id="3_yw3xp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h0mdm"]
 radius = 89.8053
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3prq8"]
-size = Vector2(129, 112)
+size = Vector2(123, 31)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p4fcf"]
 atlas = ExtResource("2_t4kkq")
@@ -51,7 +52,7 @@ collision_layer = 4
 shape = SubResource("CircleShape2D_h0mdm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 3)
+position = Vector2(-2.5, 4.5)
 shape = SubResource("RectangleShape2D_3prq8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -59,5 +60,9 @@ position = Vector2(0, -22)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_1ldpp")
 frame_progress = 0.9489
+
+[node name="pimba" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_yw3xp")
+autoplay = true
 
 [connection signal="body_entered" from="DetectorPersonatge" to="." method="_on_detector_personatge_body_entered"]

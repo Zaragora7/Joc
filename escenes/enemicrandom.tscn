@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://wqly4hud164k" path="res://imatges/Dungeon_Character.png" id="1_grhjc"]
 [ext_resource type="Script" path="res://Scripts/enemicrandomdispara.gd" id="2_hpk2s"]
-[ext_resource type="AudioStream" uid="uid://b1flrox0samir" path="res://Efecto de sonido definitivo (fuego artificial de minecraft).wav" id="3_r6mh7"]
+[ext_resource type="AudioStream" uid="uid://b1flrox0samir" path="res://MúsicaSons/Efecto de sonido definitivo (fuego artificial de minecraft).wav" id="3_r6mh7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xi2wm"]
 atlas = ExtResource("1_grhjc")

@@ -121,6 +121,7 @@ func _on_hit_box_atac_area_entered(area):
 
 func guanya_clau():
 	print("Tinc una clau!")
+	$clau.play()
 	tinc_clau = true
 
 func mal(pos_enemic):
@@ -147,3 +148,4 @@ func mor():
 func _on_hit_box_atac_body_entered(body):
 	if body.has_method("mort"):
 		body.mort()
+

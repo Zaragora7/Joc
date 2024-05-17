@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmvbtxotj8xrl"]
+
+[ext_resource type="AudioStream" uid="uid://b8hdeshk686y" path="res://MúsicaSons/Vampire Survivors Soundtrack -  Reincarnated Echoes (looping) [ ezmp3.cc ].mp3" id="1_ykanm"]
+[ext_resource type="Script" path="res://AudioStreamPlayer.gd" id="2_0itp2"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_ykanm")
+script = ExtResource("2_0itp2")
