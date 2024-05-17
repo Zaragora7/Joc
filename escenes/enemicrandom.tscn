@@ -53,7 +53,7 @@ fill_from = Vector2(0.495413, 0.527523)
 fill_to = Vector2(0.93578, 0.142202)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0lx7w"]
-radius = 902.045
+radius = 679.213
 
 [node name="EnemicAleatori" type="Area2D" groups=["enemics"]]
 collision_layer = 16

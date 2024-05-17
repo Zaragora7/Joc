@@ -231,10 +231,8 @@ script = ExtResource("1_5q85a")
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_18hp8")
-animation = &"atac2"
+animation = &"Idle"
 autoplay = "Idle"
-frame = 5
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.5, 42)
@@ -254,8 +252,8 @@ position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-6.50001, 38.5)
-scale = Vector2(5.42188, 4.10938)
+position = Vector2(3, 31)
+scale = Vector2(5, 3.789)
 texture = SubResource("GradientTexture2D_kbxj8")
 
 [node name="Espasa" type="AudioStreamPlayer" parent="."]

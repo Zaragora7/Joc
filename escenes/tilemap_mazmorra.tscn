@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dafh6pi731uou"]
+[gd_scene load_steps=26 format=3 uid="uid://dafh6pi731uou"]
 
 [ext_resource type="Script" path="res://escenes/tilemap.gd" id="1_4i5rp"]
 [ext_resource type="Texture2D" uid="uid://cl6iejjimifoy" path="res://imatges/negre.jpg" id="1_065x0"]
@@ -468,6 +468,16 @@ fill = 1
 fill_from = Vector2(0.516667, 0.00555556)
 fill_to = Vector2(0.544444, 0.544444)
 
+[sub_resource type="Gradient" id="Gradient_a48yc"]
+offsets = PackedFloat32Array(0.00819672, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5oroo"]
+gradient = SubResource("Gradient_a48yc")
+fill = 1
+fill_from = Vector2(0.5, 0.451613)
+fill_to = Vector2(0.876344, 0.134409)
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_4i5rp")
 
@@ -561,9 +571,6 @@ position = Vector2(2122, -1821)
 [node name="EnemicAleatori2" parent="." instance=ExtResource("3_0s5jp")]
 position = Vector2(1593, -2535)
 
-[node name="Node2D" parent="." instance=ExtResource("9_w2va7")]
-position = Vector2(-1041, -3336)
-
 [node name="EnemicAleatori3" parent="." instance=ExtResource("3_0s5jp")]
 position = Vector2(1662, -2676)
 
@@ -619,3 +626,12 @@ position = Vector2(2466, -1555)
 
 [node name="musica" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_cojre")
+
+[node name="Node2D3" parent="." instance=ExtResource("9_w2va7")]
+position = Vector2(-1042, -3331)
+
+[node name="PointLight2D" type="PointLight2D" parent="Node2D3"]
+scale = Vector2(7, 7)
+color = Color(0.215686, 0.894118, 0.133333, 1)
+energy = 3.88
+texture = SubResource("GradientTexture2D_5oroo")

@@ -1,10 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://tvrsao1kdc1u"]
+[gd_scene load_steps=5 format=3 uid="uid://tvrsao1kdc1u"]
 
 [ext_resource type="Script" path="res://gema.gd" id="1_sxtfw"]
 [ext_resource type="Texture2D" uid="uid://bq0t8m1eqc4vf" path="res://imatges/diamond.png" id="2_57uvu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nqhex"]
 radius = 15.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w6jlw"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 51.86
+gravity = Vector3(0, -98, 0)
+color = Color(0.866667, 1, 0.917647, 1)
 
 [node name="Node2D" type="Node2D"]
 
@@ -18,5 +25,9 @@ shape = SubResource("CircleShape2D_nqhex")
 position = Vector2(2, 5)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_57uvu")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 12
+process_material = SubResource("ParticleProcessMaterial_w6jlw")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
