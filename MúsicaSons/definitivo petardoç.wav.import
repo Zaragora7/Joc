@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ch2im2c3jflob"
+path="res://.godot/imported/definitivo petardoç.wav-86c0cac0dc8935aeca6b1fbf0f154c68.sample"
+
+[deps]
+
+source_file="res://MúsicaSons/definitivo petardoç.wav"
+dest_files=["res://.godot/imported/definitivo petardoç.wav-86c0cac0dc8935aeca6b1fbf0f154c68.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

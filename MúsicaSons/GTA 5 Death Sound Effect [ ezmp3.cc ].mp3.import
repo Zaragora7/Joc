@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://svqffsx6bbcv"
+path="res://.godot/imported/GTA 5 Death Sound Effect [ ezmp3.cc ].mp3-e80f885348dfcfd47ef95f162272f6c9.mp3str"
+
+[deps]
+
+source_file="res://MúsicaSons/GTA 5 Death Sound Effect [ ezmp3.cc ].mp3"
+dest_files=["res://.godot/imported/GTA 5 Death Sound Effect [ ezmp3.cc ].mp3-e80f885348dfcfd47ef95f162272f6c9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

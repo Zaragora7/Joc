@@ -1,13 +1,34 @@
-[gd_scene load_steps=17 format=3 uid="uid://daksydx7xcxgw"]
+[gd_scene load_steps=23 format=3 uid="uid://daksydx7xcxgw"]
 
 [ext_resource type="Script" path="res://Scripts/Enemic.gd" id="1_ba7wl"]
 [ext_resource type="Texture2D" uid="uid://dj6bcuu3u7qho" path="res://imatges/slime.png" id="2_5jtnr"]
+[ext_resource type="AudioStream" uid="uid://dthmkp5hl4h0q" path="res://MúsicaSons/Hog rider sound [ ezmp3.cc ].wav" id="3_glxg1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7vca5"]
 radius = 385.001
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irm1g"]
 size = Vector2(14.75, 14.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uucn"]
+atlas = ExtResource("2_5jtnr")
+region = Rect2(0, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7mo7"]
+atlas = ExtResource("2_5jtnr")
+region = Rect2(32, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydyqd"]
+atlas = ExtResource("2_5jtnr")
+region = Rect2(64, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnebi"]
+atlas = ExtResource("2_5jtnr")
+region = Rect2(96, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1jom"]
+atlas = ExtResource("2_5jtnr")
+region = Rect2(128, 384, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wthua"]
 atlas = ExtResource("2_5jtnr")
@@ -51,6 +72,26 @@ region = Rect2(160, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qnabw"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uucn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7mo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydyqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnebi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1jom")
+}],
+"loop": true,
+"name": &"death",
+"speed": 4.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wthua")
@@ -122,12 +163,22 @@ shape = SubResource("RectangleShape2D_irm1g")
 texture_filter = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_qnabw")
-animation = &"idle"
+animation = &"death"
+frame = 2
+frame_progress = 0.367859
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 4)
 shape = SubResource("RectangleShape2D_0kbdy")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.2
+
+[node name="hog_rider" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_glxg1")
+volume_db = 1.0
+
 [connection signal="body_entered" from="deteccio" to="." method="_on_deteccio_body_entered"]
 [connection signal="body_exited" from="deteccio" to="." method="_on_deteccio_body_exited"]
 [connection signal="body_entered" from="Hitboxenemic" to="." method="_on_hitboxenemic_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

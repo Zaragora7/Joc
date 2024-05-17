@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxb05bcl1w6me"]
+
+[ext_resource type="AudioStream" uid="uid://cb0s0rhuerx4p" path="res://MúsicaSons/C418  - Sweden - Minecraft Volume Alpha [ ezmp3.cc ].mp3" id="1_1gl4c"]
+[ext_resource type="Script" path="res://auto_load/musica_menu.gd" id="1_asgou"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_asgou")
+
+[node name="musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_1gl4c")

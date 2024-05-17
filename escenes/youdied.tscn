@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba3k2bbk6ss20"]
+[gd_scene load_steps=4 format=3 uid="uid://ba3k2bbk6ss20"]
 
 [ext_resource type="Texture2D" uid="uid://coq2t4lthabkv" path="res://imatges/castillo-mazmorra-interior-ai-stone-paredes-ladrillo-antorchas_154797-711.jpg" id="1_2pisj"]
 [ext_resource type="Script" path="res://escenes/youdied.gd" id="1_25jws"]
+[ext_resource type="AudioStream" uid="uid://svqffsx6bbcv" path="res://MúsicaSons/GTA 5 Death Sound Effect [ ezmp3.cc ].mp3" id="3_3cawh"]
 
 [node name="youdied" type="Node2D"]
 script = ExtResource("1_25jws")
@@ -34,6 +35,9 @@ offset_right = 257.85
 offset_bottom = -58.578
 theme_override_font_sizes/font_size = 70
 text = "𝐇𝐀𝐒 𝐏𝐄𝐑𝐃𝐔𝐓!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3cawh")
 
 [connection signal="pressed" from="Castillo-mazmorra-interior-ai-stone-paredes-ladrillo-antorchas154797-711/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Castillo-mazmorra-interior-ai-stone-paredes-ladrillo-antorchas154797-711/Button2" to="." method="_on_button_2_pressed"]

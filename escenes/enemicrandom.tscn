@@ -1,16 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://bqgtw1bfyytqs"]
+[gd_scene load_steps=13 format=3 uid="uid://bqgtw1bfyytqs"]
 
 [ext_resource type="Texture2D" uid="uid://wqly4hud164k" path="res://imatges/Dungeon_Character.png" id="1_grhjc"]
 [ext_resource type="Script" path="res://Scripts/enemicrandomdispara.gd" id="2_hpk2s"]
-[ext_resource type="AudioStream" uid="uid://b1flrox0samir" path="res://MúsicaSons/Efecto de sonido definitivo (fuego artificial de minecraft).wav" id="3_r6mh7"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xi2wm"]
-atlas = ExtResource("1_grhjc")
-region = Rect2(0, 0, 16, 16)
+[ext_resource type="AudioStream" uid="uid://ch2im2c3jflob" path="res://MúsicaSons/definitivo petardoç.wav" id="3_h7kbc"]
+[ext_resource type="AudioStream" uid="uid://bisgnqkiflppi" path="res://MúsicaSons/death_enemie_sound.wav" id="4_bwhc8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hcm0k"]
 atlas = ExtResource("1_grhjc")
 region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xi2wm"]
+atlas = ExtResource("1_grhjc")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_82ejj"]
 atlas = ExtResource("1_grhjc")
@@ -20,10 +21,10 @@ region = Rect2(96, 0, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xi2wm")
+"texture": SubResource("AtlasTexture_hcm0k")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hcm0k")
+"texture": SubResource("AtlasTexture_xi2wm")
 }],
 "loop": true,
 "name": &"default",
@@ -51,6 +52,9 @@ fill = 1
 fill_from = Vector2(0.495413, 0.527523)
 fill_to = Vector2(0.93578, 0.142202)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0lx7w"]
+radius = 902.045
+
 [node name="EnemicAleatori" type="Area2D" groups=["enemics"]]
 collision_layer = 16
 script = ExtResource("2_hpk2s")
@@ -62,7 +66,6 @@ sprite_frames = SubResource("SpriteFrames_122qi")
 frame_progress = 0.863873
 
 [node name="Timer" type="Timer" parent="AnimatedSprite2D"]
-wait_time = 0.5
 autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -73,6 +76,19 @@ shape = SubResource("RectangleShape2D_mcgvs")
 texture = SubResource("GradientTexture2D_3t4j7")
 
 [node name="petardo" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_r6mh7")
+stream = ExtResource("3_h7kbc")
+
+[node name="mals" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bwhc8")
+volume_db = 1.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_0lx7w")
+
+[node name="abc" type="Timer" parent="."]
+wait_time = 2.0
 
 [connection signal="timeout" from="AnimatedSprite2D/Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

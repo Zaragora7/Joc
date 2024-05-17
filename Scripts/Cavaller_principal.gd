@@ -14,7 +14,8 @@ var vides := 5:
 @onready var point_light_2d = $PointLight2D
 var kickback_strength := 50
 var kickback = false
-
+var was_moving = false
+var acabat = false
 func _physics_process(delta):
 
 	direccio = Vector2(0,0)
@@ -38,24 +39,40 @@ func _physics_process(delta):
 	
 	
 	#if velocity.length_squared() == 0 and not atacar:
-	if velocity != Vector2(0,0):
-		$Run.stop()
-	else:
-		$Run.play()
 	
-	
-	if velocity.x == 0 and velocity.y == 0 and not atacar:
-	
+	var is_moving = velocity.x != 0 or velocity.y != 0
+	if not is_moving and not atacar:
 		$AnimatedSprite2D.play("Idle")
-	
-	elif velocity.x != 0 or velocity.y != 0:
-
+		if was_moving:
+			$Run.stop()
+	elif is_moving:
 		$AnimatedSprite2D.play("Running")
+		if not was_moving:
+			$Run.play()
+	
 	if velocity.x < 0:
 		$AnimatedSprite2D.flip_h = true
 	elif velocity.x > 0:
 		$AnimatedSprite2D.flip_h = false
-		
+	
+	was_moving = is_moving
+	
+	
+	#if velocity.x == 0 and velocity.y == 0 and not atacar:
+	
+	#	$AnimatedSprite2D.play("Idle")
+	#	$Run.stop()
+	
+	#elif velocity.x != 0 or velocity.y != 0:
+
+	#	$AnimatedSprite2D.play("Running")
+	#	$Run.play()
+	#if velocity.x < 0:
+	#	$AnimatedSprite2D.flip_h = true
+	#elif velocity.x > 0:
+	#	$AnimatedSprite2D.flip_h = false
+	###########################################################3
+	
 	#if velocity.length_squared() == 0 and not atacar:
 		#$AnimatedSprite2D.play("Idle")
 	#elif velocity.x < 0:
@@ -112,10 +129,12 @@ func _atac_acabat():
 
 
 func _on_hit_box_atac_area_entered(area):
+	acabat = false
 	if area.has_method("mort"):
 		area.mor()
 	if area.is_in_group("enemics"):
 		print(area.name)
+		$death_mage.play()
 		area.queue_free()
 		
 
@@ -147,5 +166,9 @@ func mor():
 
 func _on_hit_box_atac_body_entered(body):
 	if body.has_method("mort"):
+		$death_slime.play()
 		body.mort()
+
+
+
 
