@@ -6,8 +6,9 @@ func _ready():
 
 
 func _on_button_pressed():
+	ProvaMenu.musica_menu()
 	get_tree().change_scene_to_file("res://escenes/menuinici.tscn")
-	pass
+	
 
 
 func _on_button_2_pressed():

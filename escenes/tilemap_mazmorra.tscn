@@ -554,7 +554,8 @@ position = Vector2(1582, -824)
 scale = Vector2(1.3, 1.3)
 
 [node name="Porta3" parent="." instance=ExtResource("6_hj84r")]
-position = Vector2(2898, -648)
+position = Vector2(2896, -649)
+scale = Vector2(1.25, 1.25)
 
 [node name="Area2D2" parent="." instance=ExtResource("5_v8mhe")]
 position = Vector2(2152, -639)
@@ -564,9 +565,6 @@ position = Vector2(2798, -1397)
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("7_futi6")]
 position = Vector2(652, -1240)
-
-[node name="Porta4" parent="." instance=ExtResource("6_hj84r")]
-position = Vector2(2122, -1821)
 
 [node name="EnemicAleatori2" parent="." instance=ExtResource("3_0s5jp")]
 position = Vector2(1593, -2535)
@@ -610,7 +608,7 @@ position = Vector2(908, -1204)
 position = Vector2(2147, -441)
 
 [node name="EnemicAleatori7" parent="." instance=ExtResource("3_0s5jp")]
-position = Vector2(2104, -1606)
+position = Vector2(2105, -1660)
 
 [node name="EnemicAleatori8" parent="." instance=ExtResource("3_0s5jp")]
 position = Vector2(1465, -119)
@@ -626,6 +624,10 @@ position = Vector2(2466, -1555)
 
 [node name="musica" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_cojre")
+
+[node name="Porta4" parent="." instance=ExtResource("6_hj84r")]
+position = Vector2(2129, -1883)
+scale = Vector2(1.3, 1.3)
 
 [node name="Node2D3" parent="." instance=ExtResource("9_w2va7")]
 position = Vector2(-1042, -3331)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtsj4avkwq3sh"]
+
+[ext_resource type="Script" path="res://principi.gd" id="1_vp7ya"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_vp7ya")

@@ -63,7 +63,6 @@ script = ExtResource("2_hpk2s")
 texture_filter = 1
 scale = Vector2(2.125, 2.5)
 sprite_frames = SubResource("SpriteFrames_122qi")
-frame_progress = 0.863873
 
 [node name="Timer" type="Timer" parent="AnimatedSprite2D"]
 autostart = true
