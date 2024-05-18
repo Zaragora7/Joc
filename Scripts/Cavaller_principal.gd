@@ -152,6 +152,7 @@ func mal(pos_enemic):
 	else:
 		var direccio = -global_position.direction_to(pos_enemic)
 		kickback = true
+		$AnimationPlayer.play("hit")
 		var tween = create_tween()
 		tween.tween_property(self, "global_position", global_position + direccio*kickback_strength, 0.2).set_trans(Tween.TRANS_EXPO)
 		tween.finished.connect(kickback_acabat)

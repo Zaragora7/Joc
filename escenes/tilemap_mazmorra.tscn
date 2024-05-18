@@ -549,6 +549,10 @@ position = Vector2(68, 19)
 scale = Vector2(0.0351563, 0.0359375)
 texture = ExtResource("10_ouqm1")
 
+[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(-6, 56)
+position_smoothing_enabled = true
+
 [node name="Porta2" parent="." instance=ExtResource("6_hj84r")]
 position = Vector2(1582, -824)
 scale = Vector2(1.3, 1.3)
