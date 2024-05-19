@@ -13,8 +13,8 @@
 [ext_resource type="FontFile" uid="uid://bc8edytfjkj1x" path="res://escenes/JABROWZKY.ttf" id="9_2jlnh"]
 [ext_resource type="PackedScene" uid="uid://tvrsao1kdc1u" path="res://escenes/gema.tscn" id="9_w2va7"]
 [ext_resource type="Texture2D" uid="uid://67wi5ur8q1mx" path="res://imatges/pixel-heart.webp" id="10_ouqm1"]
+[ext_resource type="AudioStream" uid="uid://bdcqamd548ddw" path="res://MúsicaSons/dasdsa.mp3" id="13_s8ibh"]
 [ext_resource type="PackedScene" uid="uid://bcr5i5groiqjt" path="res://fuego.tscn" id="13_yh3eu"]
-[ext_resource type="AudioStream" uid="uid://b8hdeshk686y" path="res://MúsicaSons/Vampire Survivors Soundtrack -  Reincarnated Echoes (looping) [ ezmp3.cc ].mp3" id="14_cojre"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y20aw"]
 texture = ExtResource("1_ntd5e")
@@ -497,37 +497,6 @@ position = Vector2(204, -1254)
 [node name="Area2D4" parent="." instance=ExtResource("5_v8mhe")]
 position = Vector2(96, -322)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_4ijm3")]
-position = Vector2(-19, 192)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody2D"]
-script = ExtResource("7_srckm")
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="CharacterBody2D"]
-script = ExtResource("7_r5nh3")
-
-[node name="Label" type="Label" parent="CharacterBody2D/CanvasLayer2"]
-offset_left = 22.0
-offset_top = 5.0
-offset_right = 56.0
-offset_bottom = 34.0
-theme_override_fonts/font = ExtResource("9_2jlnh")
-theme_override_font_sizes/font_size = 30
-text = "  3"
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/CanvasLayer2"]
-position = Vector2(68, 19)
-scale = Vector2(0.0351563, 0.0359375)
-texture = ExtResource("10_ouqm1")
-
-[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(-6, 56)
-position_smoothing_enabled = true
-
-[node name="Porta2" parent="." instance=ExtResource("6_hj84r")]
-position = Vector2(1582, -824)
-scale = Vector2(1.3, 1.3)
-
 [node name="Porta3" parent="." instance=ExtResource("6_hj84r")]
 position = Vector2(2896, -649)
 scale = Vector2(1.25, 1.25)
@@ -590,7 +559,7 @@ position = Vector2(1943, -565)
 position = Vector2(2466, -1555)
 
 [node name="musica" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_cojre")
+stream = ExtResource("13_s8ibh")
 
 [node name="Porta4" parent="." instance=ExtResource("6_hj84r")]
 position = Vector2(2129, -1883)
@@ -611,5 +580,33 @@ position = Vector2(-145, -496)
 [node name="Node2D2" parent="." instance=ExtResource("13_yh3eu")]
 position = Vector2(78, -496)
 
-[node name="Node2D4" parent="." instance=ExtResource("13_yh3eu")]
-position = Vector2(-176, -1457)
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_4ijm3")]
+position = Vector2(-19, 192)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody2D"]
+script = ExtResource("7_srckm")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="CharacterBody2D"]
+script = ExtResource("7_r5nh3")
+
+[node name="Label" type="Label" parent="CharacterBody2D/CanvasLayer2"]
+offset_left = 22.0
+offset_top = 5.0
+offset_right = 56.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("9_2jlnh")
+theme_override_font_sizes/font_size = 30
+text = "  3"
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/CanvasLayer2"]
+position = Vector2(68, 19)
+scale = Vector2(0.0351563, 0.0359375)
+texture = ExtResource("10_ouqm1")
+
+[node name="Camera2D2" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(-6, 56)
+position_smoothing_enabled = true
+
+[node name="Porta2" parent="." instance=ExtResource("6_hj84r")]
+position = Vector2(1582, -824)
+scale = Vector2(1.3, 1.3)
