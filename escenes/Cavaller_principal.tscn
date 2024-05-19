@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b8l43nm73mwno" path="res://imatges/Blue Slash Thin/_Attack2.png" id="4_1ych2"]
 [ext_resource type="AudioStream" uid="uid://cypweggv7ycup" path="res://MúsicaSons/SwordSlash.ogg" id="5_olaru"]
 [ext_resource type="AudioStream" uid="uid://ba1mhnudrd1fr" path="res://MúsicaSons/Take Damage definitivo Sound Effect [ ezmp3.cc ].wav" id="6_c8p5o"]
-[ext_resource type="AudioStream" uid="uid://dx1jfslcs2xkw" path="res://MúsicaSons/Minecraft Footsteps Sound Effect (HD) (online-audio-converter.com).wav" id="6_hd75h"]
+[ext_resource type="AudioStream" uid="uid://bu4oqt2wlcvmy" path="res://MúsicaSons/foootEffect (HD) (online-audio-converter.com).mp3" id="6_ft17y"]
 [ext_resource type="AudioStream" uid="uid://ct8rveya4hlj2" path="res://MúsicaSons/Minecraft XP Sound [ ezmp3.cc ].mp3" id="7_2bq0h"]
 [ext_resource type="AudioStream" uid="uid://bisgnqkiflppi" path="res://MúsicaSons/death_enemie_sound.wav" id="9_6ygio"]
 [ext_resource type="AudioStream" uid="uid://dcufd5yel0ick" path="res://escenes/Pac-Man Death - Sound Effect (HD) [ ezmp3.cc ].mp3" id="10_c41yl"]
@@ -332,7 +332,7 @@ stream = ExtResource("5_olaru")
 pitch_scale = 0.8
 
 [node name="Run" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_hd75h")
+stream = ExtResource("6_ft17y")
 volume_db = 3.0
 autoplay = true
 
