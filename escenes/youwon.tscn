@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhhm5r76ybv4s"]
+[gd_scene load_steps=5 format=3 uid="uid://bhhm5r76ybv4s"]
 
 [ext_resource type="Texture2D" uid="uid://kc65tp26cvau" path="res://imatges/porta mazmorra.jpg" id="1_68q25"]
 [ext_resource type="Script" path="res://escenes/youwon.gd" id="1_wi2gs"]
 [ext_resource type="FontFile" uid="uid://bc8edytfjkj1x" path="res://escenes/JABROWZKY.ttf" id="3_r21u8"]
+[ext_resource type="AudioStream" uid="uid://c1meio6b2k8mr" path="res://escenes/Final Fantasy 7 Victoria [ ezmp3.cc ].mp3" id="4_n2gga"]
 
 [node name="youwon" type="Node2D"]
 script = ExtResource("1_wi2gs")
@@ -22,10 +23,10 @@ offset_bottom = -8.94865
 theme_override_fonts/font = ExtResource("3_r21u8")
 theme_override_font_sizes/font_size = 35
 text = "𝐌𝐎𝐋𝐓𝐄𝐒 𝐅𝐄𝐋𝐂𝐈𝐓𝐀𝐓𝐒 
-𝐇𝐀𝐒 𝐏𝐀𝐒𝐒𝐀𝐓 
-𝐄𝐋 𝐉𝐎𝐂!"
+Has guanyat"
 
 [node name="Button" type="Button" parent="PortaMazmorra"]
+texture_filter = 1
 offset_left = 97.5513
 offset_top = 55.4683
 offset_right = 239.551
@@ -48,6 +49,9 @@ offset_right = 239.551
 offset_bottom = 169.127
 theme_override_fonts/font = ExtResource("3_r21u8")
 text = "SORTIR"
+
+[node name="win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_n2gga")
 
 [connection signal="pressed" from="PortaMazmorra/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="PortaMazmorra/Button3" to="." method="_on_button_3_pressed"]

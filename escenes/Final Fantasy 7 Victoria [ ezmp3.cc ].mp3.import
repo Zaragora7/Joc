@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1meio6b2k8mr"
+path="res://.godot/imported/Final Fantasy 7 Victoria [ ezmp3.cc ].mp3-6483e45eab65440b0dc57d5b5cd153ee.mp3str"
+
+[deps]
+
+source_file="res://escenes/Final Fantasy 7 Victoria [ ezmp3.cc ].mp3"
+dest_files=["res://.godot/imported/Final Fantasy 7 Victoria [ ezmp3.cc ].mp3-6483e45eab65440b0dc57d5b5cd153ee.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
