@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bcr5i5groiqjt"]
+[gd_scene load_steps=12 format=3 uid="uid://bcr5i5groiqjt"]
 
 [ext_resource type="Texture2D" uid="uid://bdud0oq1eieuo" path="res://Torch_Sheet.png" id="1_mmjl1"]
 
@@ -62,6 +62,15 @@ gravity = Vector3(0, -98, 0)
 linear_accel_min = -20.0
 linear_accel_max = 20.0
 
+[sub_resource type="Gradient" id="Gradient_5w2ef"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_oxxl2"]
+gradient = SubResource("Gradient_5w2ef")
+fill = 1
+fill_from = Vector2(0.518919, 0.486486)
+fill_to = Vector2(0.918919, 0.113514)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -75,3 +84,7 @@ self_modulate = Color(1, 0.317647, 0.12549, 1)
 position = Vector2(0, -2)
 amount = 14
 process_material = SubResource("ParticleProcessMaterial_e8iu1")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(5, 5)
+texture = SubResource("GradientTexture2D_oxxl2")
