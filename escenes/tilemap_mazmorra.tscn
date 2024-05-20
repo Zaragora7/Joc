@@ -492,7 +492,7 @@ position = Vector2(145, -241)
 position = Vector2(-33, -549)
 
 [node name="Area2D" parent="." instance=ExtResource("5_v8mhe")]
-position = Vector2(204, -1254)
+position = Vector2(205, -1310)
 
 [node name="Area2D4" parent="." instance=ExtResource("5_v8mhe")]
 position = Vector2(96, -322)
@@ -538,7 +538,7 @@ position = Vector2(1663, -292)
 position = Vector2(2575, -60)
 
 [node name="EnemicAleatori4" parent="." instance=ExtResource("3_0s5jp")]
-position = Vector2(908, -1204)
+position = Vector2(932, -1209)
 
 [node name="EnemicAleatori5" parent="." instance=ExtResource("3_0s5jp")]
 position = Vector2(2147, -441)
