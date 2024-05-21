@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var pot_atacar = true
 var vel_salt := Vector2.UP * 500
 var direccio := Vector2(0, 0)
 var velocitat_maxima = 200
@@ -92,16 +93,20 @@ func _physics_process(delta):
 	#else:
 	#	$AnimatedSprite2D.play("Idle")
 func _atac():
-	$Espasa.play()
-	$AnimatedSprite2D.play("atac2")
-	collision_shape_atac.set_deferred("disabled", false)
-	atacar = true
-	if $AnimatedSprite2D.flip_h:
-		$HitBoxAtac.position.x = -59
-	else:
-		$HitBoxAtac.position.x = 59
-	await $AnimatedSprite2D.animation_finished
-	atacar = false
+	if pot_atacar:
+		$Timer.start()
+		pot_atacar = false
+		$Espasa.play()
+		$AnimatedSprite2D.play("atac2")
+		collision_shape_atac.set_deferred("disabled", false)
+		atacar = true
+		if $AnimatedSprite2D.flip_h:
+			$HitBoxAtac.position.x = -59
+		else:
+			$HitBoxAtac.position.x = 59
+		await $AnimatedSprite2D.animation_finished
+		atacar = false
+		
 	
 
 		
@@ -173,3 +178,7 @@ func _on_hit_box_atac_body_entered(body):
 
 
 
+
+
+func _on_timer_timeout():
+	pot_atacar = true
