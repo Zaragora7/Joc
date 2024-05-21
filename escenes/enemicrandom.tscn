@@ -72,6 +72,7 @@ position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_mcgvs")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.0
 texture = SubResource("GradientTexture2D_3t4j7")
 
 [node name="petardo" type="AudioStreamPlayer" parent="."]
