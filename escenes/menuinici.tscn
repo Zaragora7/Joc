@@ -9,8 +9,8 @@
 script = ExtResource("1_cq87t")
 
 [node name="Mazmorra" type="Sprite2D" parent="."]
-position = Vector2(545, 362)
-scale = Vector2(0.226, 0.197375)
+position = Vector2(637, 381)
+scale = Vector2(0.262, 0.233187)
 texture = ExtResource("1_8sfcr")
 
 [node name="instruccions" type="Button" parent="Mazmorra"]

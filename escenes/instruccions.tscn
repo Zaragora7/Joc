@@ -18,11 +18,10 @@ fill_to = Vector2(0.83871, 0.225806)
 [node name="Node2D" type="Node2D"]
 
 [node name="Mazmorra" type="Sprite2D" parent="."]
-position = Vector2(545, 362)
-scale = Vector2(0.226, 0.197375)
+position = Vector2(655, 424.063)
+scale = Vector2(0.248, 0.214469)
 texture = ExtResource("1_u1kw2")
 script = ExtResource("2_2yn2q")
-metadata/_edit_lock_ = true
 
 [node name="back" type="Button" parent="Mazmorra"]
 offset_left = -2296.46

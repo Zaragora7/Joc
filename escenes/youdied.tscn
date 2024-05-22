@@ -9,8 +9,8 @@ script = ExtResource("1_25jws")
 
 [node name="Castillo-mazmorra-interior-ai-stone-paredes-ladrillo-antorchas154797-711" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(577, 324)
-scale = Vector2(1.86901, 1.56835)
+position = Vector2(673.5, 399)
+scale = Vector2(2.27636, 1.95444)
 texture = ExtResource("1_2pisj")
 
 [node name="Button" type="Button" parent="Castillo-mazmorra-interior-ai-stone-paredes-ladrillo-antorchas154797-711"]
